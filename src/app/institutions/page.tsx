@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CapitalEfficiencyCalculator from "@/components/CapitalEfficiencyCalculator";
 
 const onchainBenefits = [
   {
@@ -110,10 +111,10 @@ export default function InstitutionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy text-white pt-28 pb-24 px-6 overflow-hidden">
+      <section className="relative bg-navy text-white pt-28 pb-24 px-6 overflow-hidden grid-overlay">
         <Image src="/deck-assets/image6.jpg" alt="" fill className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(52,125,135,0.2)_0%,_transparent_60%)]" />
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-teal/30 rounded-full bg-teal/10">
             <span className="text-teal-light text-xs font-bold tracking-wider">FOR INSTITUTIONS</span>
           </div>
@@ -129,7 +130,7 @@ export default function InstitutionsPage() {
             now settling in seconds instead of days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/data-room" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors">
+            <Link href="/data-room" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow">
               Access Data Room
             </Link>
             <Link href="/waitlist" className="px-8 py-3.5 border border-white/20 hover:border-white/40 text-white font-semibold rounded-lg transition-colors">
@@ -154,7 +155,7 @@ export default function InstitutionsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {onchainBenefits.map((item) => (
-              <div key={item.title} className="card-hover p-6 rounded-xl border border-slate-200 bg-slate-50 group">
+              <div key={item.title} className="card-hover gradient-border p-6 rounded-xl border border-slate-200 bg-slate-50 group animate-on-scroll">
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center text-teal">
                     {item.icon}
@@ -223,6 +224,25 @@ export default function InstitutionsPage() {
         </div>
       </section>
 
+      {/* Capital Efficiency Calculator */}
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
+              Capital Efficiency
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              See How Much You Save
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              Adjust the trade size and holding period to see how tokenized MBS settlement
+              dramatically reduces costs and frees capital.
+            </p>
+          </div>
+          <CapitalEfficiencyCalculator />
+        </div>
+      </section>
+
       {/* Yield Comparison */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
@@ -273,7 +293,7 @@ export default function InstitutionsPage() {
       </section>
 
       {/* Market Makers & LPs */}
-      <section className="section-padding bg-navy text-white">
+      <section className="section-padding bg-navy text-white grid-overlay">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
@@ -290,7 +310,7 @@ export default function InstitutionsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {marketMakerBenefits.map((item) => (
-              <div key={item.title} className="p-6 rounded-xl border border-white/10 bg-white/5">
+              <div key={item.title} className="glass-card p-6 rounded-xl animate-on-scroll">
                 <h3 className="font-bold text-teal-light mb-3">{item.title}</h3>
                 <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
               </div>

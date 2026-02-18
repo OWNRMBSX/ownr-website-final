@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollAnimator from "@/components/ScrollAnimator";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "OWNR | Where Ownership Meets Opportunity",
   description:
-    "OWNR is the application layer for tokenized markets — starting with the $12T mortgage-backed securities market. Institutional infrastructure meets retail access.",
+    "OWNR is the application layer for tokenized markets — starting with the $15T mortgage-backed securities market. Institutional infrastructure meets retail access.",
 };
 
 export default function RootLayout({
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ScrollAnimator />
       </body>
     </html>
   );

@@ -19,7 +19,7 @@ export default function Home() {
               The Largest Untokenized Market in the World
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
-              Mortgage-backed securities are a <span className="text-navy font-semibold">$12 trillion market</span> —
+              Mortgage-backed securities are a <span className="text-navy font-semibold">$15 trillion market</span> —
               the second largest fixed-income asset class after U.S. Treasuries.
               Yet it still runs on legacy infrastructure: T+1-3 settlement, manual reconciliation,
               and zero retail access. Until now.
@@ -56,8 +56,8 @@ export default function Home() {
       </section>
 
       {/* Why Now — Regulatory Momentum */}
-      <section className="section-padding bg-navy text-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
               Why Now
@@ -94,7 +94,7 @@ export default function Home() {
                 tag: "Projected",
               },
             ].map((item) => (
-              <div key={item.title} className="p-6 rounded-xl border border-white/10 bg-white/5">
+              <div key={item.title} className="glass-card p-6 rounded-xl animate-on-scroll">
                 <span className="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal-light bg-teal/10 rounded mb-3">
                   {item.tag}
                 </span>
@@ -106,7 +106,7 @@ export default function Home() {
 
           <div className="mt-12 p-6 rounded-xl bg-teal/10 border border-teal/20 text-center">
             <p className="text-teal-light font-semibold text-lg">
-              MBS is the ideal next asset class: $12T+ market, operational complexity
+              MBS is the ideal next asset class: $15T+ market, operational complexity
               perfect for smart contracts, proven institutional infrastructure now operational.
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link href="/institutions" className="group card-hover block rounded-2xl overflow-hidden border border-slate-200">
+            <Link href="/institutions" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
               <div className="relative h-48 bg-navy overflow-hidden">
                 <Image src="/deck-assets/image16.jpg" alt="" fill className="object-cover opacity-30" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent" />
@@ -161,7 +161,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/retail" className="group card-hover block rounded-2xl overflow-hidden border border-slate-200">
+            <Link href="/retail" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
               <div className="relative h-48 bg-gradient-to-br from-teal to-teal-dark overflow-hidden">
                 <Image src="/deck-assets/image42.jpg" alt="" fill className="object-cover opacity-20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-dark to-transparent" />
@@ -209,7 +209,7 @@ export default function Home() {
             MBSX has a place for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors">
+            <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow">
               Join the Waitlist
             </Link>
             <Link href="/data-room" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors">

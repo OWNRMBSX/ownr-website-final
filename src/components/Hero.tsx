@@ -84,7 +84,7 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-6 leading-[0.95] tracking-tight text-white">
-          The $12 Trillion
+          The $15 Trillion
           <br />
           <span className="text-teal-light">Opportunity</span>
         </h1>
@@ -104,7 +104,7 @@ export default function Hero() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-3xl mx-auto">
           {[
-            { value: "$12T", label: "Market Size" },
+            { value: "$15T", label: "Market Size" },
             { value: "$311B", label: "Traded Daily" },
             { value: "~12s", label: "Settlement" },
             { value: "24/7", label: "Trading" },

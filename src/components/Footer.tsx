@@ -17,7 +17,7 @@ export default function Footer() {
             />
             <p className="text-white/60 text-sm max-w-sm leading-relaxed">
               The application layer for tokenized markets — starting with the
-              $12 trillion mortgage-backed securities market. Where Ownership
+              $15 trillion mortgage-backed securities market. Where Ownership
               Meets Opportunity.
             </p>
           </div>
