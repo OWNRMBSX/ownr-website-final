@@ -57,29 +57,115 @@ const regionData: Record<
   },
 };
 
-/* ─── SVG US Map paths (simplified) ─── */
-const regionPaths: Record<string, string> = {
-  northeast:
-    "M730 80 L780 70 L800 100 L810 130 L790 170 L760 190 L730 180 L710 150 L700 120 Z",
-  southeast:
-    "M620 240 L700 220 L760 190 L790 170 L800 220 L790 280 L760 320 L720 340 L670 330 L630 310 L610 280 Z",
-  midwest:
-    "M480 100 L580 90 L630 100 L700 120 L710 150 L730 180 L700 220 L620 240 L560 230 L500 210 L470 180 L460 140 Z",
-  southwest:
-    "M350 280 L450 260 L530 270 L610 280 L630 310 L620 360 L580 390 L500 400 L420 390 L350 360 L330 320 Z",
-  west:
-    "M120 100 L200 80 L250 110 L280 160 L300 220 L280 280 L250 320 L200 340 L150 320 L110 280 L100 220 L100 160 Z",
-  mountain:
-    "M250 110 L350 100 L460 140 L470 180 L500 210 L560 230 L530 270 L450 260 L350 280 L330 320 L250 320 L280 280 L300 220 L280 160 Z",
+/* ─── SVG US Map paths (recognizable outlines) ─── */
+const regionPaths: Record<string, string[]> = {
+  west: [
+    // Washington
+    "M108 50 L170 42 L175 48 L178 78 L138 82 L108 78 Z",
+    // Oregon
+    "M108 78 L138 82 L178 78 L182 118 L140 130 L100 118 Z",
+    // California
+    "M100 118 L140 130 L148 160 L145 200 L138 240 L120 270 L105 260 L95 230 L88 190 L90 150 Z",
+  ],
+  mountain: [
+    // Montana
+    "M178 48 L280 38 L284 78 L178 78 Z",
+    // Idaho
+    "M178 78 L210 78 L215 82 L212 120 L182 118 Z",
+    // Wyoming
+    "M215 82 L284 78 L286 118 L212 120 Z",
+    // Nevada
+    "M140 130 L182 118 L212 120 L200 190 L148 160 Z",
+    // Utah
+    "M212 120 L260 118 L258 175 L200 190 Z",
+    // Colorado
+    "M260 118 L350 115 L350 170 L258 175 Z",
+    // Arizona
+    "M148 160 L200 190 L258 175 L250 240 L195 260 L145 250 L138 240 Z",
+    // New Mexico
+    "M258 175 L350 170 L345 250 L250 250 L250 240 Z",
+  ],
+  midwest: [
+    // North Dakota
+    "M284 38 L380 35 L382 72 L284 78 Z",
+    // South Dakota
+    "M284 78 L382 72 L385 108 L286 118 Z",
+    // Nebraska
+    "M286 118 L385 108 L388 145 L350 150 L350 115 Z",
+    // Kansas
+    "M350 150 L388 145 L390 185 L350 185 L350 170 Z",
+    // Minnesota
+    "M382 35 L450 30 L455 42 L460 80 L430 82 L382 72 Z",
+    // Iowa
+    "M382 72 L430 82 L460 80 L465 112 L440 118 L385 108 Z",
+    // Missouri
+    "M388 145 L440 118 L465 112 L475 140 L480 175 L470 195 L435 200 L390 185 Z",
+    // Wisconsin
+    "M460 30 L510 28 L525 42 L520 80 L490 85 L460 80 Z",
+    // Michigan
+    "M510 28 L540 25 L560 40 L560 65 L545 95 L520 100 L520 80 L525 42 Z",
+    // Illinois
+    "M465 112 L510 105 L515 145 L510 175 L480 175 L475 140 Z",
+    // Indiana
+    "M510 105 L540 100 L538 140 L535 170 L510 175 L515 145 Z",
+    // Ohio
+    "M540 100 L545 95 L580 85 L595 100 L590 145 L570 155 L538 140 Z",
+  ],
+  northeast: [
+    // New York
+    "M595 55 L630 48 L665 45 L680 55 L670 70 L660 90 L630 100 L610 105 L595 100 Z",
+    // Pennsylvania
+    "M595 100 L610 105 L630 100 L660 105 L658 128 L595 130 L580 125 Z",
+    // New Jersey
+    "M660 105 L670 100 L675 125 L665 140 L658 128 Z",
+    // Connecticut + Rhode Island + Massachusetts
+    "M665 45 L700 42 L710 55 L705 70 L680 75 L670 70 L680 55 Z",
+    // Vermont + New Hampshire
+    "M665 20 L680 18 L690 30 L700 42 L665 45 L660 30 Z",
+    // Maine
+    "M690 5 L720 10 L715 30 L700 42 L690 30 Z",
+    // Maryland + Delaware
+    "M620 128 L658 128 L665 140 L660 148 L620 145 Z",
+  ],
+  southeast: [
+    // Virginia
+    "M580 125 L595 130 L620 128 L620 145 L660 148 L650 160 L600 168 L565 160 Z",
+    // North Carolina
+    "M565 160 L600 168 L650 160 L670 172 L640 190 L580 195 L555 185 Z",
+    // South Carolina
+    "M580 195 L640 190 L640 210 L610 225 L575 215 Z",
+    // Georgia
+    "M555 185 L580 195 L575 215 L610 225 L600 248 L570 260 L548 240 L540 210 Z",
+    // Florida
+    "M570 260 L600 248 L615 260 L620 290 L610 320 L595 350 L580 355 L575 330 L565 305 L558 280 Z",
+    // West Virginia + Kentucky
+    "M520 130 L580 125 L565 160 L555 185 L540 190 L500 185 L495 160 L510 145 Z",
+    // Tennessee
+    "M470 195 L540 190 L555 185 L540 210 L480 215 L465 210 Z",
+    // Alabama
+    "M540 210 L548 240 L545 270 L520 280 L505 260 L500 230 L510 215 Z",
+    // Mississippi
+    "M500 230 L510 215 L480 215 L475 240 L478 270 L490 280 L505 260 Z",
+    // Louisiana
+    "M435 250 L475 240 L478 270 L490 280 L485 295 L460 300 L440 290 L430 270 Z",
+    // Arkansas
+    "M435 200 L470 195 L465 210 L480 215 L475 240 L435 250 Z",
+  ],
+  southwest: [
+    // Texas
+    "M345 250 L435 250 L430 270 L440 290 L460 300 L455 330 L430 360 L400 380 L370 370 L340 350 L315 320 L310 290 L320 265 Z",
+    // Oklahoma
+    "M345 185 L390 185 L435 200 L435 250 L345 250 L350 185 Z",
+  ],
 };
 
 const regionLabelPositions: Record<string, { x: number; y: number }> = {
-  northeast: { x: 750, y: 130 },
-  southeast: { x: 700, y: 270 },
-  midwest: { x: 570, y: 160 },
-  southwest: { x: 480, y: 330 },
-  west: { x: 160, y: 210 },
-  mountain: { x: 370, y: 200 },
+  northeast: { x: 655, y: 80 },
+  southeast: { x: 560, y: 245 },
+  midwest: { x: 460, y: 110 },
+  southwest: { x: 385, y: 295 },
+  west: { x: 120, y: 160 },
+  mountain: { x: 240, y: 150 },
 };
 
 /* ─── Sparkline component ─── */
@@ -237,24 +323,30 @@ export default function MBSInvestmentDemo() {
             <p className="text-white/40 text-sm mb-6 text-center">
               Click a region to see MBS pools in that area
             </p>
-            <div className="relative mx-auto" style={{ maxWidth: 500 }}>
-              <svg viewBox="60 50 780 380" className="w-full">
-                {Object.entries(regionPaths).map(([id, path]) => {
+            <div className="relative mx-auto" style={{ maxWidth: 580 }}>
+              <svg viewBox="70 0 670 400" className="w-full">
+                {Object.entries(regionPaths).map(([id, paths]) => {
                   const isHovered = hoveredRegion === id;
                   const data = regionData[id];
                   const pos = regionLabelPositions[id];
                   return (
-                    <g key={id}>
-                      <path
-                        d={path}
-                        fill={isHovered ? `${data.color}40` : `${data.color}15`}
-                        stroke={isHovered ? data.color : `${data.color}60`}
-                        strokeWidth={isHovered ? 2.5 : 1.5}
-                        className="cursor-pointer transition-all duration-200"
-                        onMouseEnter={() => setHoveredRegion(id)}
-                        onMouseLeave={() => setHoveredRegion(null)}
-                        onClick={() => handleRegionClick(id)}
-                      />
+                    <g
+                      key={id}
+                      className="cursor-pointer"
+                      onMouseEnter={() => setHoveredRegion(id)}
+                      onMouseLeave={() => setHoveredRegion(null)}
+                      onClick={() => handleRegionClick(id)}
+                    >
+                      {paths.map((path, i) => (
+                        <path
+                          key={i}
+                          d={path}
+                          fill={isHovered ? `${data.color}50` : `${data.color}18`}
+                          stroke={isHovered ? data.color : `${data.color}50`}
+                          strokeWidth={isHovered ? 2 : 1}
+                          className="transition-all duration-200"
+                        />
+                      ))}
                       <text
                         x={pos.x}
                         y={pos.y - 10}
