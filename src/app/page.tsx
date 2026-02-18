@@ -26,31 +26,48 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-8">
-              <div className="text-5xl font-bold text-teal mb-2">$311B</div>
-              <div className="text-sm text-slate-500 mb-4">Traded every single day</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                MBS is one of the most liquid markets on Earth — yet its infrastructure
-                hasn&apos;t been modernized in decades.
-              </p>
-            </div>
-            <div className="text-center p-8 border-x border-slate-100">
-              <div className="text-5xl font-bold text-teal mb-2">0%</div>
-              <div className="text-sm text-slate-500 mb-4">Retail access today</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Everyday investors have never been able to invest directly in MBS.
-                MBSX changes that with fractional tokens from $10.
-              </p>
-            </div>
-            <div className="text-center p-8">
-              <div className="text-5xl font-bold text-teal mb-2">T+3</div>
-              <div className="text-sm text-slate-500 mb-4">Current settlement time</div>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Three days to settle a trade. Billions in capital locked up.
-                MBSX delivers atomic settlement in ~12 seconds.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                stat: "$311B",
+                label: "Traded every single day",
+                desc: "MBS is one of the most liquid markets on Earth — yet its infrastructure hasn\u2019t been modernized in decades.",
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                ),
+              },
+              {
+                stat: "0%",
+                label: "Retail access today",
+                desc: "Everyday investors have never been able to invest directly in MBS. MBSX changes that with fractional tokens from $10.",
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                  </svg>
+                ),
+              },
+              {
+                stat: "T+3",
+                label: "Current settlement time",
+                desc: "Three days to settle a trade. Billions in capital locked up. MBSX delivers atomic settlement in ~12 seconds.",
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.stat} className="card-hover gradient-border text-center p-8 rounded-xl border border-slate-200 bg-slate-50 animate-on-scroll">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
+                  {item.icon}
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-teal mb-2">{item.stat}</div>
+                <div className="text-sm font-semibold text-navy mb-3">{item.label}</div>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
