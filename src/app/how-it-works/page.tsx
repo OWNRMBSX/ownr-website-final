@@ -7,35 +7,30 @@ const architectureLayers = [
     name: "Frontend Layer",
     tech: "Next.js 14 + React 18",
     desc: "Institutional dashboard, tokenization wizard, securities registry, and admin panel. Sign-In With Ethereum (EIP-4361) authentication — no passwords, no custodial risk.",
-    color: "teal",
   },
   {
     num: "02",
     name: "API Layer",
     tech: "Fastify + TypeScript",
-    desc: "RESTful gateway with JWT middleware, Zod request validation, and webhook receivers for BNY Mellon custody events and DTCC settlement confirmations.",
-    color: "teal",
+    desc: "RESTful gateway with JWT middleware, Zod request validation, and webhook receivers for custody events and clearinghouse settlement confirmations.",
   },
   {
     num: "03",
     name: "Service Layer",
     tech: "Tokenization + Custody + Pricing",
     desc: "Core business logic: EIP-1167 token deployment, custody bridge event processing (HMAC-SHA256 verified), and FINRA TRACE pricing with 3-tier fallback.",
-    color: "teal",
   },
   {
     num: "04",
     name: "Persistence Layer",
     tech: "PostgreSQL + Prisma ORM",
     desc: "Append-only audit logs, custody events, pending actions, price records, and investor registry. Full SEC Rule 17a-4 books-and-records compliance.",
-    color: "teal",
   },
   {
     num: "05",
     name: "External Integration",
-    tech: "Ethereum + BNY + DTCC + Circle",
-    desc: "Blockchain settlement, institutional custody, DTCC clearing, USDC stablecoin payments, Securitize Markets ATS, and Gnosis Safe multisig governance.",
-    color: "teal",
+    tech: "Ethereum + Custody + Clearing + Stablecoin",
+    desc: "Blockchain settlement, institutional-grade custody, clearinghouse integration, stablecoin payments, SEC-registered ATS, and multisig governance.",
   },
 ];
 
@@ -43,7 +38,7 @@ const lifecycleSteps = [
   {
     phase: "Trade",
     title: "TBA Trade Agreed",
-    desc: "A dealer agrees to buy or sell a forward MBS contract (TBA) through standard channels. DTCC margin (~2% face value) is posted. The trade follows the same conventions institutions use today.",
+    desc: "A dealer agrees to buy or sell a forward MBS contract (TBA) through standard channels. Clearinghouse margin (~2% face value) is posted. The trade follows the same conventions institutions use today — nothing changes upstream.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -52,8 +47,8 @@ const lifecycleSteps = [
   },
   {
     phase: "Custody",
-    title: "BNY Mellon Confirms Receipt",
-    desc: "BNY Mellon, the qualified custodian, sends an HMAC-SHA256 signed webhook confirming the asset is in custody. This creates a PendingAction requiring compliance officer approval before any on-chain action.",
+    title: "Qualified Custodian Confirms Receipt",
+    desc: "Our qualified custodian sends an HMAC-SHA256 signed webhook confirming the asset is in custody. This creates a PendingAction requiring compliance officer approval before any onchain action can execute.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -63,7 +58,7 @@ const lifecycleSteps = [
   {
     phase: "Tokenize",
     title: "ERC-3525 TBA Token Minted",
-    desc: "After dual-control approval, OWNR mints a semi-fungible ERC-3525 token. Tokens are fungible within the same slot (same agency, coupon, maturity month) — exactly mirroring how TBAs work in traditional markets.",
+    desc: "After dual-control approval, we mint a semi-fungible ERC-3525 token. Tokens are fungible within the same slot (same agency, coupon, maturity month) — exactly mirroring how TBAs work in traditional markets.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -72,8 +67,8 @@ const lifecycleSteps = [
   },
   {
     phase: "Deliver",
-    title: "DTCC Pool Delivery (48-Hour Rule)",
-    desc: "DTCC confirms which specific MBS pool will deliver against the TBA. BNY Mellon sends a DELIVERY_CONFIRMED webhook. This triggers the mutation from forward contract to delivered security.",
+    title: "Pool Delivery (48-Hour Rule)",
+    desc: "The clearinghouse confirms which specific MBS pool will deliver against the TBA. Our custodian sends a DELIVERY_CONFIRMED webhook. This triggers the mutation from forward contract to delivered security.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -83,7 +78,7 @@ const lifecycleSteps = [
   {
     phase: "Mutate",
     title: "Atomic Settlement — TBA to MBS",
-    desc: "The TBASettlementEngine atomically: verifies the DTCC confirmation hash on-chain, burns the ERC-3525 TBA token, deploys a new ERC-3643 security token proxy, and mints the delivered MBS token to the buyer. All in one transaction.",
+    desc: "Our TBASettlementEngine atomically: verifies the clearinghouse confirmation hash onchain, burns the ERC-3525 TBA token, deploys a new ERC-3643 security token proxy, and mints the delivered MBS token to the buyer. All in one transaction.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -92,8 +87,8 @@ const lifecycleSteps = [
   },
   {
     phase: "Trade",
-    title: "Secondary Trading on Securitize ATS",
-    desc: "The ERC-3643 MBS token is listed on Securitize Markets (SEC-registered ATS). Every transfer runs 5 compliance checks: KYC identity, jurisdiction, freeze status, concentration limit, and lock-up period. Atomic DvP in USDC.",
+    title: "Secondary Trading via Registered ATS",
+    desc: "The ERC-3643 MBS token is listed on our SEC-registered ATS partner for secondary trading. Every transfer runs 5 compliance checks: KYC identity, jurisdiction, freeze status, concentration limit, and lock-up period. Atomic DvP in USDC.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -103,7 +98,7 @@ const lifecycleSteps = [
 ];
 
 const complianceChecks = [
-  { name: "Identity Registry", desc: "Recipient must be KYC-verified and registered on-chain", icon: "01" },
+  { name: "Identity Registry", desc: "Recipient must be KYC-verified and registered onchain", icon: "01" },
   { name: "Jurisdiction", desc: "Reg D / Rule 144A / Reg S eligibility verified", icon: "02" },
   { name: "Freeze Status", desc: "Neither party can be frozen (OFAC, legal hold)", icon: "03" },
   { name: "Concentration Limit", desc: "Max 25% of pool outstanding per investor", icon: "04" },
@@ -112,29 +107,29 @@ const complianceChecks = [
 
 const partners = [
   {
-    name: "BNY Mellon",
-    role: "Qualified Custodian",
-    desc: "Holds legal title to underlying MBS pools under SEC Rule 206(4)-2. No token is minted or burned without a signed custody confirmation.",
+    name: "Qualified Custodian",
+    role: "SEC Rule 206(4)-2",
+    desc: "Holds legal title to underlying MBS pools. No token is minted or burned without a cryptographically signed custody confirmation from our custodian.",
   },
   {
-    name: "Securitize Markets",
-    role: "SEC-Registered ATS",
-    desc: "Order matching, trade execution, and broker-dealer intermediation for secondary trading. The only ATS with native ERC-3643 support and BNY Mellon integration.",
+    name: "SEC-Registered ATS",
+    role: "Regulation ATS / FINRA B/D",
+    desc: "Order matching, trade execution, and broker-dealer intermediation for secondary trading. We write the compliance hook; the ATS calls it before every trade.",
   },
   {
-    name: "Securitize Inc.",
-    role: "Transfer Agent",
-    desc: "SEC-registered transfer agent handling KYC/AML identity verification, investor onboarding, and accredited/QIB certification.",
+    name: "Transfer Agent",
+    role: "SEC-Registered",
+    desc: "Maintains the authoritative beneficial ownership register. Handles KYC/AML identity verification, investor onboarding, and accredited/QIB certification.",
   },
   {
-    name: "DTCC MBSD",
-    role: "Clearing & Settlement",
-    desc: "Standard TBA clearing and pool delivery. DTCC confirmation numbers are stored on-chain for full auditability.",
+    name: "Clearinghouse",
+    role: "MBS Clearing & Settlement",
+    desc: "Standard TBA clearing and pool delivery. Clearinghouse confirmation numbers are stored onchain, creating an immutable audit trail linking off-chain clearing to onchain state.",
   },
   {
-    name: "Circle (USDC)",
-    role: "Settlement Currency",
-    desc: "All on-chain settlement in USDC — subscriptions, secondary trades, P&I distributions, dollar roll drops, and redemptions. T+0 finality.",
+    name: "Stablecoin Settlement",
+    role: "USDC Infrastructure",
+    desc: "All onchain settlement denominated in USDC at 1:1 with USD — subscriptions, secondary trades, P&I distributions, dollar roll drops, and redemptions. T+0 finality.",
   },
 ];
 
@@ -144,9 +139,9 @@ const specs = [
   { label: "Proxy Deploy", value: "EIP-1167", detail: "96% gas reduction" },
   { label: "Settlement", value: "T+0", detail: "Atomic DvP in USDC" },
   { label: "Blockchain", value: "Ethereum", detail: "Mainnet (chainId 1)" },
-  { label: "Governance", value: "3-of-5", detail: "Gnosis Safe multisig" },
+  { label: "Governance", value: "3-of-5", detail: "Multisig" },
   { label: "Oracle", value: "2-of-3", detail: "Threshold signing" },
-  { label: "Timelock", value: "72 hours", detail: "OpenZeppelin controller" },
+  { label: "Timelock", value: "72 hours", detail: "Governance delay" },
   { label: "Auth", value: "SIWE", detail: "EIP-4361, no passwords" },
   { label: "Custody Webhook", value: "HMAC-SHA256", detail: "timingSafeEqual" },
   { label: "Depeg Threshold", value: "50 bps", detail: "Auto-pause redemptions" },
@@ -161,20 +156,20 @@ export default function HowItWorksPage() {
         <Image src="/deck-assets/image6.jpg" alt="" fill className="object-cover opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,_rgba(52,125,135,0.25)_0%,_transparent_60%)]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-teal/30 rounded-full bg-teal/10">
-            <span className="text-teal-light text-xs font-bold tracking-wider">TECHNICAL ARCHITECTURE</span>
-          </div>
+          <Image src="/deck-assets/image2.png" alt="OWNR" width={180} height={46} className="mx-auto mb-8 brightness-0 invert" />
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            How OWNR Works
+            How It Works
           </h1>
           <p className="text-white/70 text-lg max-w-3xl mx-auto leading-relaxed mb-4">
-            A compliant tokenization engine for agency mortgage-backed securities.
-            Not a trading venue. Not a broker-dealer. OWNR maintains the on-chain representation
-            of securities that already exist in the real world — writing compliance state, enforcing
+            We built OWNR as a compliant tokenization engine for the $15 trillion agency MBS market.
+            We don&apos;t operate a trading venue. We don&apos;t hold custody. We maintain the onchain
+            representation of securities that already exist — writing compliance state, enforcing
             transfer restrictions, and executing lifecycle events on behalf of regulated counterparties.
           </p>
           <p className="text-white/40 text-sm max-w-2xl mx-auto">
-            Built on the BlackRock BUIDL fund model, extended to the $15T agency MBS market.
+            Our architecture extends the BlackRock BUIDL fund model — where Securitize issues and manages
+            the onchain token and BNY Mellon maintains the beneficial ownership register — to the far larger
+            and structurally more complex agency MBS market.
           </p>
         </div>
       </section>
@@ -184,14 +179,15 @@ export default function HowItWorksPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">
-              Partner Ecosystem
+              Our Infrastructure
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
-              Institutional Infrastructure. Not a Black Box.
+              We Built the Engine. Not the Whole Car.
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto">
               OWNR is the tokenization layer. Everything else — custody, trading, clearing,
-              identity, and settlement — is handled by best-in-class regulated partners.
+              identity, and settlement — is handled by best-in-class regulated counterparties
+              operating under existing SEC, FINRA, and FinCEN frameworks.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -226,12 +222,12 @@ export default function HowItWorksPage() {
               Five Layers. Zero Gaps.
             </h2>
             <p className="text-white/60 max-w-3xl mx-auto">
-              Every layer is purpose-built for regulatory compliance and institutional-grade reliability.
+              We designed every layer for regulatory compliance and institutional-grade reliability.
               Append-only audit logs, HMAC-verified webhooks, and dual-control approval at every step.
             </p>
           </div>
           <div className="space-y-4">
-            {architectureLayers.map((layer, i) => (
+            {architectureLayers.map((layer) => (
               <div key={layer.num} className="glass-card rounded-xl p-6 animate-on-scroll flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                 <div className="flex items-center gap-4 md:w-64 shrink-0">
                   <span className="text-teal-light font-mono font-bold text-2xl">{layer.num}</span>
@@ -240,9 +236,6 @@ export default function HowItWorksPage() {
                     <span className="text-xs text-teal-light font-semibold">{layer.tech}</span>
                   </div>
                 </div>
-                {i < architectureLayers.length - 1 && (
-                  <div className="hidden md:block w-px h-8 bg-teal/20 absolute -bottom-4 left-10" />
-                )}
                 <p className="text-white/50 text-sm leading-relaxed flex-1">{layer.desc}</p>
               </div>
             ))}
@@ -262,13 +255,13 @@ export default function HowItWorksPage() {
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto">
               MBS instruments have two distinct phases — forward contract and delivered pool.
-              OWNR uses two different ERC standards because the two phases have fundamentally different properties.
+              We use two different ERC standards because the two phases have fundamentally different economic properties.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* TBA Token */}
-            <div className="rounded-2xl border border-slate-200 overflow-hidden">
+            <div className="rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll">
               <div className="bg-navy p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-3 py-1 bg-teal/20 text-teal-light text-xs font-bold rounded-full">PHASE 1</span>
@@ -300,7 +293,7 @@ export default function HowItWorksPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Value field = face value in WAD</span> (1e18 = $1.00 face). Supports dollar rolls, pair-offs, and extensions.</p>
+                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Value field = face value in WAD</span> (1e18 = $1.00 face). Supports dollar rolls, pair-offs, and extensions natively.</p>
                 </div>
                 <div className="mt-4 p-3 rounded-lg bg-slate-50 border border-slate-200">
                   <p className="text-xs text-slate-400 font-mono">Lifecycle: Mint at trade &rarr; Dollar rolls / Pair-offs &rarr; Burn at settlement</p>
@@ -309,7 +302,7 @@ export default function HowItWorksPage() {
             </div>
 
             {/* MBS Token */}
-            <div className="rounded-2xl border border-slate-200 overflow-hidden">
+            <div className="rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll">
               <div className="bg-gradient-to-r from-teal to-teal-dark p-6">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full">PHASE 2</span>
@@ -325,7 +318,7 @@ export default function HowItWorksPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Non-fungible by pool</span> — each CUSIP gets its own proxy contract. Deployed via EIP-1167 minimal proxy (96% gas reduction, ~$5-15 per pool).</p>
+                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Non-fungible by pool</span> — each CUSIP gets its own proxy contract. We deploy via EIP-1167 minimal proxy (96% gas reduction, ~$5-15 per pool).</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -333,7 +326,7 @@ export default function HowItWorksPage() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Mandatory compliance hook</span> — every transfer calls ModularCompliance.canTransfer() enforcing 5 sequential checks before execution.</p>
+                  <p className="text-sm text-slate-600"><span className="font-semibold text-navy">Mandatory compliance hook</span> — every transfer calls our ModularCompliance.canTransfer() enforcing 5 sequential checks before execution.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-teal/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -438,7 +431,7 @@ export default function HowItWorksPage() {
               Five Checks. Every Transfer.
             </h2>
             <p className="text-white/60 max-w-3xl mx-auto">
-              Every ERC-3643 token transfer runs through a ModularCompliance contract.
+              Every ERC-3643 token transfer runs through our ModularCompliance contract.
               All five checks must pass sequentially — if any fails, the entire transfer reverts.
               Compliance is enforced at the smart contract level, not by policy.
             </p>
@@ -469,7 +462,7 @@ export default function HowItWorksPage() {
                 Dual-Control Principle
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">
-                No on-chain action executes without two independent approvals. BNY Mellon creates
+                No onchain action executes without two independent approvals. Our qualified custodian creates
                 the PendingAction via webhook; a compliance officer must approve before any token
                 is minted, burned, or transferred. Neither party can act alone.
               </p>
@@ -502,7 +495,7 @@ export default function HowItWorksPage() {
               T+0. Every Time.
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto">
-              All on-chain settlement in USDC — T+0 finality for every event type.
+              All onchain settlement in USDC — T+0 finality for every event type.
               Escrow funds are never invested, lent, or rehypothecated.
               Automatic depeg protection pauses redemptions if USDC deviates more than 50 basis points.
             </p>
@@ -510,12 +503,12 @@ export default function HowItWorksPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
-              { event: "Subscription / Mint", flow: "Investor deposits USDC into USDCEscrow", time: "T+0" },
-              { event: "ATS Secondary Trade", flow: "Buyer USDC swapped to Seller USDC atomically", time: "T+0" },
-              { event: "P&I Distribution", flow: "BNY Mellon converts USD to USDC, distributed pro-rata", time: "Monthly" },
+              { event: "Subscription / Mint", flow: "Investor deposits USDC into escrow contract", time: "T+0" },
+              { event: "ATS Secondary Trade", flow: "Buyer USDC swapped to seller USDC atomically", time: "T+0" },
+              { event: "P&I Distribution", flow: "Custodian converts USD to USDC, distributed pro-rata to holders", time: "Monthly" },
               { event: "Dollar Roll Drop", flow: "Buyer pays seller the roll drop in USDC", time: "T+0" },
               { event: "Pair-Off", flow: "Losing party pays winning party the price difference", time: "T+0" },
-              { event: "Redemption", flow: "USDCEscrow releases to investor; BNY settles USD at T+2", time: "T+0 on-chain" },
+              { event: "Redemption", flow: "Escrow releases USDC to investor; custodian settles USD on legacy rails", time: "T+0 onchain" },
             ].map((item) => (
               <div key={item.event} className="card-hover gradient-border p-5 rounded-xl border border-slate-200 bg-slate-50 animate-on-scroll">
                 <div className="flex items-start justify-between mb-3">
@@ -553,42 +546,97 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* Regulatory Framework */}
+      {/* Extending BUIDL */}
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">
-              Regulatory Framework
+              Institutional Precedent
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
-              Built for Compliance. Not Bolted On.
+              We Extend the BUIDL Model
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto">
+              BlackRock&apos;s BUIDL fund ($2.5B+) uses Securitize as transfer agent and BNY Mellon as custodian
+              for tokenized treasuries. We extend this proven architecture to the $15T agency MBS market
+              along four dimensions that BUIDL&apos;s fund structure doesn&apos;t address.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "TBA Lifecycle Mechanics",
+                desc: "Dollar rolls, pair-offs, extensions, stipulated trades, specified pool trades, and batch netting — none of which apply to a continuously-offered fund like BUIDL.",
+                tag: "BUIDL: N/A",
+              },
+              {
+                title: "Clearinghouse Integration",
+                desc: "Settlement confirmations from the clearinghouse serve as authoritative triggers for onchain token state mutations, anchoring every lifecycle event to institutional clearing.",
+                tag: "BUIDL: No clearing",
+              },
+              {
+                title: "Pool Factor Decay",
+                desc: "Monthly scheduled factor updates reflecting actual mortgage prepayments and amortization update onchain NAV in real time — requiring an Oracle architecture BUIDL's constant $1.00 NAV doesn't need.",
+                tag: "BUIDL: Constant NAV",
+              },
+              {
+                title: "P&I Distributions",
+                desc: "Monthly principal and interest payments flow from our custodian through USDC to our onchain DistributionContract, claimable pro-rata — a continuous yield mechanism absent in BUIDL.",
+                tag: "BUIDL: No P&I flow",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card-hover p-6 rounded-xl border border-slate-200 bg-white animate-on-scroll">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-bold text-navy text-lg">{item.title}</h3>
+                  <span className="text-[9px] font-mono text-slate-400 bg-slate-100 px-2 py-0.5 rounded shrink-0 ml-2">
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Regulatory Framework */}
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
+              Regulatory Framework
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Built for Compliance. Not Bolted On.
+            </h2>
+            <p className="text-white/60 max-w-3xl mx-auto">
               Agency MBS tokens benefit from Securities Act Section 3(a)(2) exemption — securities
               guaranteed by GSEs (Ginnie Mae, Fannie Mae, Freddie Mac) are exempt from registration.
+              We designed every component to satisfy existing regulatory frameworks.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
-              { reg: "SEC Rule 206(4)-2", title: "Custody Rule", desc: "No token minted or burned without BNY Mellon custody confirmation plus dual-control compliance officer approval." },
+              { reg: "SEC Rule 206(4)-2", title: "Custody Rule", desc: "No token minted or burned without qualified custodian confirmation plus dual-control compliance officer approval." },
               { reg: "SEC Rule 17a-4", title: "Books & Records", desc: "Append-only CustodyEvent and AuditLog tables. Raw webhook bodies stored verbatim with immutable timestamps." },
               { reg: "FinCEN BSA", title: "Anti-Money Laundering", desc: "Dual-control with two structurally separated actors. AML screening at KYC plus quarterly re-screening." },
               { reg: "FINRA Rule 4370", title: "Business Continuity", desc: "Three-tier FINRA TRACE pricing fallback. 99.9% uptime SLA for webhook processing." },
-              { reg: "Regulation ATS", title: "Alternative Trading System", desc: "Secondary trading exclusively through Securitize Markets — SEC/FINRA-registered ATS (CRD #298066)." },
-              { reg: "DTCC MBSD Rule 4", title: "Good Delivery", desc: "48-hour pool notification modeled in flow. DTCC confirmation numbers stored on-chain for auditability." },
+              { reg: "Regulation ATS", title: "Alternative Trading System", desc: "Secondary trading exclusively through our SEC/FINRA-registered ATS partner." },
+              { reg: "SIFMA / DTCC Rules", title: "Good Delivery", desc: "48-hour pool notification modeled in flow. Clearinghouse confirmation numbers stored onchain for auditability." },
             ].map((item) => (
-              <div key={item.reg} className="card-hover p-5 rounded-xl border border-slate-200 bg-white animate-on-scroll">
+              <div key={item.reg} className="glass-card rounded-xl p-5 animate-on-scroll">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 rounded-lg bg-teal/20 border border-teal/30 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-teal-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-teal">{item.reg}</span>
-                    <h3 className="font-bold text-navy mt-0.5">{item.title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed mt-1">{item.desc}</p>
+                    <span className="text-xs font-bold text-teal-light">{item.reg}</span>
+                    <h3 className="font-bold text-white mt-0.5">{item.title}</h3>
+                    <p className="text-sm text-white/50 leading-relaxed mt-1">{item.desc}</p>
                   </div>
                 </div>
               </div>
@@ -600,8 +648,9 @@ export default function HowItWorksPage() {
       {/* CTA */}
       <section className="bg-gradient-navy text-white section-padding">
         <div className="max-w-3xl mx-auto text-center">
+          <Image src="/deck-assets/image2.png" alt="OWNR" width={140} height={36} className="mx-auto mb-6 brightness-0 invert" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Want the Full Technical Details?
+            Ready to See the Full Architecture?
           </h2>
           <p className="text-white/70 mb-8 leading-relaxed">
             Access the complete whitepaper, smart contract interfaces, API documentation,
