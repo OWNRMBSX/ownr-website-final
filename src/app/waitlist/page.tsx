@@ -49,7 +49,7 @@ export default function WaitlistPage() {
             <div className="space-y-4">
               {[
                 "Institutional-grade MBS tokenization with T+0 settlement",
-                "Fractional synthetic MBS tokens from $10",
+                "Fractional MBS tokens from $10",
                 "24/7 trading with government-backed yield",
                 "AMM yield engine for liquidity providers",
               ].map((item) => (
