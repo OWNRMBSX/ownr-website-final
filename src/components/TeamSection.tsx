@@ -9,7 +9,7 @@ const team = [
   {
     name: "Daniel Pason",
     role: "Chief Innovation Officer",
-    photo: "/deck-assets/image7.jpg",
+    photo: "/deck-assets/image9.jpg",
   },
   {
     name: "Matthew Moll",
@@ -27,7 +27,7 @@ const advisors = [
   {
     name: "Hamza Khan",
     role: "Former Head of European Data, NASDAQ | Founder with successful exit to NASDAQ",
-    photo: "/deck-assets/image9.jpg",
+    photo: "/deck-assets/image7.jpg",
   },
   {
     name: "Zack An",

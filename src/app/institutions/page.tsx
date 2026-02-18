@@ -84,26 +84,62 @@ const marketMakerBenefits = [
   {
     title: "Trading Fee Revenue",
     desc: "Earn bps-based fees on every MBS trade. The $311B daily MBS volume means consistent, high-throughput fee generation from day one.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    stat: "0.3-1.0 bps",
   },
   {
     title: "Funding-Rate Capture",
-    desc: "Capture funding-rate spreads from leveraged positions and directional retail flow. Persistent yield opportunities that don't exist in legacy MBS.",
+    desc: "Capture funding-rate spreads from leveraged positions and directional retail flow. Persistent yield opportunities that don\u2019t exist in legacy MBS markets.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+    stat: "Variable",
   },
   {
     title: "Continuous Liquidity Provision",
     desc: "Provide two-sided liquidity to MBSX pools and earn yield from every swap. Multiple return streams in a single position — fees, spreads, and vault yields.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    ),
+    stat: "Multi-stream",
   },
   {
     title: "24/7 Yield Generation",
     desc: "Unlike traditional markets closed on weekends, MBSX pools generate yield around the clock — including after-hours when TBA markets are dark.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    stat: "24/7",
   },
   {
     title: "Institutional Data Services",
     desc: "Premium real-time market data, analytics, and API feeds. Sell high-speed data packages to other dealers, quants, and asset managers as an additional revenue stream.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+      </svg>
+    ),
+    stat: "API + Feeds",
   },
   {
-    title: "New Retail Demand",
-    desc: "For the first time, retail capital flows into MBS. Market makers benefit from an entirely new source of order flow and liquidity that deepens the book.",
+    title: "New Retail Order Flow",
+    desc: "For the first time, retail capital flows into MBS. Market makers benefit from an entirely new source of order flow and liquidity that deepens the book and widens addressable demand.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    stat: "$15T TAM",
   },
 ];
 
@@ -136,6 +172,35 @@ export default function InstitutionsPage() {
             <Link href="/waitlist" className="px-8 py-3.5 border border-white/20 hover:border-white/40 text-white font-semibold rounded-lg transition-colors">
               Request Partnership
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Capital Efficiency Calculator — featured right after hero */}
+      <section className="section-padding bg-navy-dark text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
+              Capital Efficiency
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              See the ROI — In Real Time
+            </h2>
+            <p className="text-white/60 max-w-3xl mx-auto mb-2">
+              A mid-size dealer trading $100M in agency MBS TBAs currently locks $2M in margin for 2 days
+              and pays ~$5K in reconciliation. With MBSX, that same trade settles in 12 seconds
+              with $500K margin and zero reconciliation cost. Adjust the inputs to model your own book.
+            </p>
+          </div>
+          <CapitalEfficiencyCalculator />
+          <div className="mt-8 max-w-3xl mx-auto">
+            <p className="text-white/25 text-[10px] leading-relaxed text-center">
+              *Illustrative example only. Assumes traditional margin rate of 2% and MBSX tokenized margin rate of 0.5%
+              based on atomic delivery-versus-payment settlement. Reconciliation savings based on elimination of manual
+              DTCC/MBSD matching. Freed capital earnings calculated at 5.5% annualized yield. Actual results will vary
+              based on trade structure, counterparty, and market conditions. This does not constitute investment advice.
+              OWNR tokens are not registered under the Securities Act of 1933. See data room for full methodology.
+            </p>
           </div>
         </div>
       </section>
@@ -205,10 +270,10 @@ export default function InstitutionsPage() {
               <h3 className="text-lg font-bold text-teal-light mb-6">How It Works</h3>
               <div className="space-y-6">
                 {[
-                  { step: "01", title: "Tokenize", desc: "MBS CUSIPs become digital twins onchain. Legal title stays with custodian; token reflects beneficial interest." },
-                  { step: "02", title: "Trade", desc: "Order-book matching with price-time priority. Same conventions, ~12 second settlement." },
-                  { step: "03", title: "Settle", desc: "Atomic delivery-versus-payment. No clearing delays, no failed trades, no counterparty risk." },
-                  { step: "04", title: "Report", desc: "Programmable compliance auto-generates TRACE reports, KYC/AML checks, and audit trails." },
+                  { step: "01", title: "Tokenize", desc: "MBS CUSIPs become digital twins onchain. Legal title stays with BNY Mellon custodian; ERC-3643 token reflects beneficial interest." },
+                  { step: "02", title: "Trade", desc: "Order-book matching with price-time priority via Securitize Markets ATS. Same conventions, ~12 second settlement." },
+                  { step: "03", title: "Settle", desc: "Atomic delivery-versus-payment in USDC. No clearing delays, no failed trades, no counterparty risk." },
+                  { step: "04", title: "Report", desc: "Programmable compliance auto-generates TRACE reports, KYC/AML checks, and immutable audit trails." },
                 ].map((s) => (
                   <div key={s.step} className="flex gap-4">
                     <div className="text-teal-light font-mono font-bold text-sm mt-0.5">{s.step}</div>
@@ -224,77 +289,9 @@ export default function InstitutionsPage() {
         </div>
       </section>
 
-      {/* Capital Efficiency Calculator */}
+      {/* Market Makers & LPs — enriched */}
       <section className="section-padding bg-navy text-white grid-overlay">
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
-              Capital Efficiency
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              See How Much You Save
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Adjust the trade size and holding period to see how tokenized MBS settlement
-              dramatically reduces costs and frees capital.
-            </p>
-          </div>
-          <CapitalEfficiencyCalculator />
-        </div>
-      </section>
-
-      {/* Yield Comparison */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">Yield Comparison</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-              Dramatically Better Returns
-            </h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
-              See how MBSX digital twins stack up against legacy products.
-            </p>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-slate-200">
-                  <th className="text-left py-4 px-4 text-slate-500 font-medium">Metric</th>
-                  <th className="text-center py-4 px-4 font-bold text-teal bg-teal/5 rounded-t-lg">MBSX</th>
-                  <th className="text-center py-4 px-4 text-slate-400 font-medium">Traditional TBA</th>
-                  <th className="text-center py-4 px-4 text-slate-400 font-medium">MBS ETF (VMBS)</th>
-                  <th className="text-center py-4 px-4 text-slate-400 font-medium">REIT (AGNC)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { metric: "Avg. Returns", vals: ["5-15%", "5-15%", "1-2%", "10-15%"], highlight: true },
-                  { metric: "Take Rate", vals: ["0.3-1.0 bps", "0.3-1.0 bps", "4 bps/yr", "100-200 bps/yr"], highlight: true },
-                  { metric: "Settlement", vals: ["~12 seconds", "T+3", "T+2", "T+2"], highlight: true },
-                  { metric: "Trading Hours", vals: ["24/7", "Market Hours", "Market Hours", "Market Hours"], highlight: true },
-                  { metric: "Direct MBS Exposure", vals: ["Yes (1:1 digital twin)", "Yes", "No (fund)", "No (REIT)"], highlight: true },
-                  { metric: "Counterparty Risk", vals: ["None (atomic DvP)", "Bilateral", "Fund-level", "Corporate"], highlight: true },
-                ].map((row) => (
-                  <tr key={row.metric} className="border-b border-slate-100">
-                    <td className="py-3 px-4 font-medium text-navy">{row.metric}</td>
-                    {row.vals.map((v, i) => (
-                      <td key={i} className={`py-3 px-4 text-center ${
-                        i === 0 ? "bg-teal/5 font-bold text-teal" : "text-slate-500"
-                      }`}>
-                        {v}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Market Makers & LPs */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
               Market Makers & Liquidity Providers
@@ -311,24 +308,42 @@ export default function InstitutionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {marketMakerBenefits.map((item) => (
               <div key={item.title} className="glass-card p-6 rounded-xl animate-on-scroll">
-                <h3 className="font-bold text-teal-light mb-3">{item.title}</h3>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center text-teal-light shrink-0">
+                    {item.icon}
+                  </div>
+                  <span className="text-xs font-bold text-teal-light bg-teal/10 px-2 py-1 rounded">
+                    {item.stat}
+                  </span>
+                </div>
+                <h3 className="font-bold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Revenue summary */}
-          <div className="mt-12 grid grid-cols-3 gap-4">
+          {/* Revenue model summary */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { label: "Trading Fees", desc: "bps on every trade" },
-              { label: "Mint/Redeem", desc: "Token issuance & burn" },
-              { label: "Data Licensing", desc: "Premium APIs & feeds" },
+              { label: "Trading Fees", desc: "bps on every trade", value: "$311B/day volume" },
+              { label: "Mint / Redeem", desc: "Token issuance & burn", value: "Per-pool fee" },
+              { label: "Data Licensing", desc: "Premium APIs & feeds", value: "Subscription" },
+              { label: "LP Vault Yield", desc: "Two-sided liquidity", value: "Continuous" },
             ].map((r) => (
-              <div key={r.label} className="p-4 rounded-xl bg-teal/10 border border-teal/20 text-center">
+              <div key={r.label} className="p-5 rounded-xl bg-teal/10 border border-teal/20 text-center">
                 <div className="font-bold text-white text-sm mb-1">{r.label}</div>
-                <div className="text-[11px] text-white/40">{r.desc}</div>
+                <div className="text-teal-light text-xs font-semibold mb-1">{r.value}</div>
+                <div className="text-[10px] text-white/30">{r.desc}</div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <p className="text-white/20 text-[10px] leading-relaxed text-center max-w-3xl mx-auto">
+              *Revenue projections are illustrative. Actual trading volumes, fee capture rates, and yield
+              generation will depend on market adoption, regulatory approval, and liquidity depth. MBSX is
+              not yet operational. All figures reference the current traditional MBS market as a baseline.
+            </p>
           </div>
         </div>
       </section>
@@ -347,7 +362,7 @@ export default function InstitutionsPage() {
             just gets dramatically better.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            {["FIX Protocol", "FpML", "DTCC", "FINRA TRACE", "KYC/AML", "CUSIP Mapping"].map((tag) => (
+            {["FIX Protocol", "FpML", "DTCC MBSD", "FINRA TRACE", "KYC/AML", "CUSIP Mapping", "BNY Mellon Custody", "Securitize ATS"].map((tag) => (
               <div key={tag} className="px-5 py-2.5 bg-slate-100 rounded-lg text-sm font-medium text-navy border border-slate-200">
                 {tag}
               </div>
@@ -373,6 +388,12 @@ export default function InstitutionsPage() {
               Join the Waitlist
             </Link>
           </div>
+          <p className="mt-6 text-white/20 text-[10px] leading-relaxed max-w-2xl mx-auto">
+            This website and its contents are for informational purposes only and do not constitute an offer
+            to sell or a solicitation of an offer to buy any securities. Past performance is not indicative
+            of future results. All investments involve risk. OWNR is a tokenization engine — not a trading venue.
+            Secondary trading is handled by Securitize Markets, an SEC-registered ATS.
+          </p>
         </div>
       </section>
     </>
