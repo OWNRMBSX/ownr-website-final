@@ -18,7 +18,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #f2f2f2;
@@ -39,13 +39,24 @@ html {
   background-clip: text;
 }
 
+/* Hero heading gradient — bolder */
+.text-gradient-hero-heading {
+  background: linear-gradient(135deg, #4ba5b1 0%, #3e919c 40%, #5cc0cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Navy gradient background with subtle radial glow */
 .bg-navy-glow {
   background: radial-gradient(ellipse at 30% 50%, rgba(52, 125, 135, 0.15) 0%, transparent 60%),
     #1B3142;
 }
 
-/* Card hover — see enhanced version below */
+/* Hero badge subtle glow */
+.hero-badge-glow {
+  box-shadow: 0 0 30px rgba(52, 125, 135, 0.1), inset 0 0 20px rgba(52, 125, 135, 0.05);
+}
 
 /* Section padding utility */
 .section-padding {
@@ -56,7 +67,7 @@ html {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .animate-on-scroll.is-visible {
   opacity: 1;
@@ -98,7 +109,7 @@ html {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   pointer-events: none;
 }
 .gradient-border:hover::before {
@@ -130,12 +141,59 @@ html {
 
 /* Enhanced card hover */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(27, 49, 66, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(27, 49, 66, 0.12);
   border-color: #347D87;
+}
+
+/* Market cards */
+.market-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+.market-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Benefit card shimmer */
+.benefit-card {
+  position: relative;
+  overflow: hidden;
+}
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(52, 125, 135, 0.05), transparent);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+.benefit-card:hover::before {
+  left: 100%;
+}
+
+/* Stat card pulse effect */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(52, 125, 135, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.stat-card:hover::after {
+  opacity: 1;
 }
 
 @layer utilities {

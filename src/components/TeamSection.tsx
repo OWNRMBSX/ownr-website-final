@@ -40,14 +40,15 @@ export default function TeamSection() {
   return (
     <section className="section-padding bg-slate-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-teal text-sm font-semibold uppercase tracking-wider mb-3">
-            OWNR x S&P Global
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-4">
+        <div className="text-center mb-16 animate-on-scroll">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal/[0.08] border border-teal/20 rounded-full mb-5">
+            <div className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
+            <span className="text-teal text-xs font-semibold uppercase tracking-wider">OWNR x S&P Global</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-4 leading-tight">
             Meet Our Team
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto">
+          <p className="text-slate-500 max-w-2xl mx-auto text-lg">
             Deep expertise in fixed income, blockchain infrastructure, and
             financial technology.
           </p>
