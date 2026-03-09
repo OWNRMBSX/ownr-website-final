@@ -18,7 +18,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #f2f2f2;
@@ -39,23 +39,10 @@ html {
   background-clip: text;
 }
 
-/* Hero heading gradient — bolder */
-.text-gradient-hero-heading {
-  background: linear-gradient(135deg, #4ba5b1 0%, #3e919c 40%, #5cc0cc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Navy gradient background with subtle radial glow */
 .bg-navy-glow {
   background: radial-gradient(ellipse at 30% 50%, rgba(52, 125, 135, 0.15) 0%, transparent 60%),
     #1B3142;
-}
-
-/* Hero badge subtle glow */
-.hero-badge-glow {
-  box-shadow: 0 0 30px rgba(52, 125, 135, 0.1), inset 0 0 20px rgba(52, 125, 135, 0.05);
 }
 
 /* Section padding utility */
@@ -67,7 +54,7 @@ html {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 .animate-on-scroll.is-visible {
   opacity: 1;
@@ -109,7 +96,7 @@ html {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 .gradient-border:hover::before {
@@ -141,59 +128,121 @@ html {
 
 /* Enhanced card hover */
 .card-hover {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(27, 49, 66, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(27, 49, 66, 0.12);
   border-color: #347D87;
 }
 
-/* Market cards */
-.market-card {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease;
+/* Badge pill with dot indicator */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(52, 125, 135, 0.2);
+  background: rgba(52, 125, 135, 0.06);
+  color: #347D87;
 }
-.market-card:hover {
-  transform: translateY(-8px);
+.badge-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #347D87;
+  flex-shrink: 0;
+}
+/* Badge pill on dark bg */
+.badge-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(52, 125, 135, 0.3);
+  background: rgba(52, 125, 135, 0.15);
+  color: #4ba5b1;
+}
+.badge-pill-dark::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ba5b1;
+  flex-shrink: 0;
 }
 
-/* Benefit card shimmer */
-.benefit-card {
+/* Timeline node */
+.timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
-  overflow: hidden;
+  flex: 1;
 }
-.benefit-card::before {
-  content: "";
+.timeline-node .node-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: 3px solid #e2e8f0;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.timeline-node.active .node-dot {
+  background: #347D87;
+  border-color: rgba(52, 125, 135, 0.3);
+  box-shadow: 0 0 12px rgba(52, 125, 135, 0.4);
+}
+.timeline-connector {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(52, 125, 135, 0.05), transparent);
-  transition: left 0.8s ease;
-  pointer-events: none;
+  top: 7px;
+  left: calc(50% + 7px);
+  right: calc(-50% + 7px);
+  height: 2px;
+  background: #e2e8f0;
+  z-index: 1;
 }
-.benefit-card:hover::before {
-  left: 100%;
+.timeline-node.active .timeline-connector {
+  background: linear-gradient(90deg, #347D87, #4ba5b1);
 }
 
-/* Stat card pulse effect */
-.stat-card {
-  position: relative;
-  overflow: hidden;
+/* Feature card for Built for the Next Era */
+.feature-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
-.stat-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle at center, rgba(52, 125, 135, 0.1) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
+.feature-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(52, 125, 135, 0.3);
+  background: rgba(255, 255, 255, 0.07);
 }
-.stat-card:hover::after {
-  opacity: 1;
+
+/* Horizontal flow line animation */
+.flow-line-h {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #347D87, transparent);
+  animation: flowH 3s ease-in-out infinite;
+}
+@keyframes flowH {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
 @layer utilities {
