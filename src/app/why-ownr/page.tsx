@@ -44,25 +44,25 @@ export default function WhyOwnr() {
             </div>
           </div>
 
-          {/* Right: Key metrics floating over the photo */}
-          <div className="hidden lg:flex flex-col gap-5">
+          {/* Key metrics */}
+          <div className="flex flex-col gap-4 lg:gap-5">
             {[
               { stat: "$15T", label: "MBS Market Size", desc: "The second largest fixed-income asset class" },
               { stat: "$350B+", label: "Daily Volume", desc: "One of the most liquid markets on Earth" },
               { stat: "0%*", label: "Retail Access", desc: "Until now, closed to everyday investors" },
             ].map((item) => (
-              <div key={item.label} className="p-6 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
-                <div className="flex items-baseline gap-4 mb-1">
-                  <span className="text-3xl font-bold text-teal-light">{item.stat}</span>
-                  <span className="text-sm font-semibold text-white/80 uppercase tracking-wider">{item.label}</span>
+              <div key={item.label} className="p-4 lg:p-6 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
+                <div className="flex items-baseline gap-3 lg:gap-4 mb-1">
+                  <span className="text-2xl lg:text-3xl font-bold text-teal-light">{item.stat}</span>
+                  <span className="text-xs lg:text-sm font-semibold text-white/80 uppercase tracking-wider">{item.label}</span>
                 </div>
-                <p className="text-sm text-white/40">{item.desc}</p>
+                <p className="text-xs lg:text-sm text-white/40">{item.desc}</p>
               </div>
             ))}
+            <p className="text-xs text-white/25 max-w-md">
+              *Retail investors are still prohibited from investing in MBS assets like TBAs and CUSIP-specific pools, but OWNR provides access through tokenized funds.
+            </p>
           </div>
-          <p className="hidden lg:block mt-6 text-xs text-white/25 max-w-md">
-            *Retail investors are still prohibited from investing in MBS assets like TBAs and CUSIP-specific pools, but OWNR provides access through tokenized funds.
-          </p>
         </div>
       </section>
 
