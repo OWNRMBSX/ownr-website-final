@@ -39,6 +39,12 @@ export default function Footer() {
                 <Link href="/retail" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   For Retail Investors
                 </Link>
+                <Link href="/assets" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Tradeable Assets
+                </Link>
+                <Link href="/technology" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Technology
+                </Link>
                 <Link href="/resources" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Resources
                 </Link>

@@ -4,10 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import WaitlistModal from "./WaitlistModal";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/why-ownr", label: "Why OWNR" },
+  { href: "/assets", label: "Tradeable Assets" },
+  { href: "/technology", label: "Technology" },
   { href: "/resources", label: "Resources" },
 ];
 
@@ -115,12 +118,7 @@ export default function Navbar() {
             Contact
           </Link>
 
-          <Link
-            href="/contact"
-            className="ml-2 px-5 py-2 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
-          >
-            Join Waitlist
-          </Link>
+          <WaitlistModal />
         </div>
 
         {/* Mobile menu button */}
@@ -191,13 +189,9 @@ export default function Navbar() {
             Contact
           </Link>
 
-          <Link
-            href="/contact"
-            className="block w-full text-center px-5 py-2.5 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
-            onClick={() => setMobileOpen(false)}
-          >
-            Join Waitlist
-          </Link>
+          <div onClick={() => setMobileOpen(false)}>
+            <WaitlistModal />
+          </div>
         </div>
       )}
     </nav>
