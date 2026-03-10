@@ -48,7 +48,7 @@ export default function WhyOwnr() {
           <div className="hidden lg:flex flex-col gap-5">
             {[
               { stat: "$15T", label: "MBS Market Size", desc: "The second largest fixed-income asset class" },
-              { stat: "$311B", label: "Traded Daily", desc: "One of the most liquid markets on Earth" },
+              { stat: "$350B+", label: "Daily Volume", desc: "One of the most liquid markets on Earth" },
               { stat: "0%", label: "Retail Access", desc: "Until now, closed to everyday investors" },
             ].map((item) => (
               <div key={item.label} className="p-6 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
@@ -177,7 +177,7 @@ export default function WhyOwnr() {
             {/* Right: Stat cards overlaying the photo atmosphere */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { stat: "$311B", label: "Daily Volume", sub: "Among the most liquid markets globally" },
+                { stat: "$350B+", label: "Daily Volume", sub: "Among the most liquid markets globally" },
                 { stat: "~12s", label: "Settlement", sub: "Atomic DvP on programmable rails" },
                 { stat: "24/7", label: "Market Hours", sub: "Trade anytime, across borders" },
                 { stat: "T+0", label: "Target", sub: "Instant finality replaces T+1-3" },

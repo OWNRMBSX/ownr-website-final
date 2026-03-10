@@ -27,7 +27,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                stat: "$311B",
+                stat: "$350B+",
                 label: "TRADED EVERY SINGLE DAY",
                 desc: "MBS is one of the most liquid markets on Earth — yet its infrastructure hasn't been modernized in decades.",
                 icon: (
