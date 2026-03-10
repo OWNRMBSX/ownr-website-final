@@ -124,76 +124,33 @@ export default function Team() {
         </div>
       </section>
 
-      {/* SECTION 3: Leadership — CEO Feature */}
+      {/* SECTION 3: Leadership */}
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-14">Leadership</h2>
 
-          {/* CEO spotlight */}
-          <div className="card-hover bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll mb-10">
-            <div className="grid grid-cols-1 lg:grid-cols-5">
-              <div className="lg:col-span-2 relative aspect-[4/5] lg:aspect-auto bg-gradient-to-br from-navy/5 to-teal/5">
-                <Image
-                  src={leadership[0].photo}
-                  alt={leadership[0].name}
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="lg:col-span-3 p-8 md:p-10 flex flex-col justify-center">
-                <p className="text-xs font-bold uppercase tracking-wider text-teal mb-3">{leadership[0].title}</p>
-                <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4">{leadership[0].name}</h3>
-                <p className="text-slate-500 leading-relaxed mb-5">{leadership[0].bio}</p>
-                <div className="border-t border-slate-100 pt-5 mb-5">
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Contribution to OWNR</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{leadership[0].contribution}</p>
-                </div>
-                {leadership[0].education && (
-                  <p className="text-xs text-slate-400 mb-5">{leadership[0].education}</p>
-                )}
-                <div className="flex flex-wrap gap-2">
-                  {leadership[0].tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-teal/[0.06] border border-teal/15 text-xs font-medium text-teal">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Remaining leadership — 3 column grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {leadership.slice(1).map((person) => (
-              <div key={person.name} className="card-hover bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll">
-                <div className="pt-10 pb-6 flex justify-center bg-gradient-to-b from-slate-50 to-white">
-                  <div className="w-36 h-36 rounded-full overflow-hidden relative border-4 border-white shadow-lg">
-                    <Image
-                      src={person.photo}
-                      alt={person.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {leadership.map((person) => (
+              <div key={person.name} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll flex flex-col">
+                {/* Photo — 3:4 portrait crop */}
+                <div className="aspect-[3/4] relative bg-gradient-to-br from-navy/5 to-teal/5">
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    fill
+                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
                 </div>
 
-                <div className="px-7 pb-8 text-center">
-                  <h3 className="text-xl font-bold text-navy">{person.name}</h3>
-                  <p className="text-teal font-medium text-sm mb-5">{person.title}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed text-left mb-5">{person.bio}</p>
+                {/* Info */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-navy leading-tight">{person.name}</h3>
+                  <p className="text-teal font-medium text-sm mt-1 mb-4">{person.title}</p>
+                  <p className="text-[13px] text-slate-500 leading-relaxed mb-4 flex-1">{person.contribution}</p>
 
-                  <div className="border-t border-slate-100 pt-4 mb-5 text-left">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Contribution to OWNR</p>
-                    <p className="text-sm text-slate-500 leading-relaxed">{person.contribution}</p>
-                  </div>
-
-                  {person.education && (
-                    <p className="text-xs text-slate-400 mb-5 text-left">{person.education}</p>
-                  )}
-
-                  <div className="flex flex-wrap gap-2 justify-center">
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
                     {person.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 rounded-full bg-teal/[0.06] border border-teal/15 text-xs font-medium text-teal">
+                      <span key={tag} className="px-2.5 py-0.5 rounded-full bg-slate-100 text-[11px] font-medium text-slate-500">
                         {tag}
                       </span>
                     ))}
@@ -215,24 +172,22 @@ export default function Team() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {advisors.map((advisor) => (
-              <div key={advisor.name} className="card-hover rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden animate-on-scroll">
-                <div className="pt-10 pb-6 flex justify-center bg-gradient-to-b from-white to-slate-50">
-                  <div className="w-28 h-28 rounded-full overflow-hidden relative border-4 border-white shadow-lg">
-                    <Image
-                      src={advisor.photo}
-                      alt={advisor.name}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
+              <div key={advisor.name} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll flex flex-col">
+                <div className="aspect-[3/4] relative bg-gradient-to-br from-navy/5 to-teal/5">
+                  <Image
+                    src={advisor.photo}
+                    alt={advisor.name}
+                    fill
+                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
                 </div>
-                <div className="px-7 pb-8 text-center">
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal mb-3">{advisor.domain}</p>
-                  <h3 className="text-lg font-bold text-navy mb-1">{advisor.name}</h3>
-                  <p className="text-sm text-slate-400 font-medium mb-4">{advisor.role}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{advisor.desc}</p>
+                <div className="p-6 flex flex-col flex-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-teal mb-2">{advisor.domain}</span>
+                  <h3 className="text-lg font-bold text-navy leading-tight">{advisor.name}</h3>
+                  <p className="text-sm text-slate-400 font-medium mt-1 mb-3">{advisor.role}</p>
+                  <p className="text-[13px] text-slate-500 leading-relaxed mt-auto">{advisor.desc}</p>
                 </div>
               </div>
             ))}
