@@ -7,7 +7,7 @@ const leadership = [
     title: "Chief Executive Officer",
     photo: "/deck-assets/headshot-christina.jpg",
     bio: "Christina Cartagena is a technology and product strategist operating at the intersection of traditional finance and decentralized infrastructure. She previously served as Commercial Strategy Lead for Visible Alpha at S\u0026P Global Market Intelligence, where she helped drive commercial strategy for institutional financial data and analytics products used by global investors. Christina has worked across blockchain infrastructure, fintech innovation, and capital markets data platforms.",
-    contribution: "Christina leads OWNR\u2019s strategic roadmap, capital markets partnerships, and investor strategy. She designed the platform\u2019s tokenized mortgage infrastructure, including the dual token model for tokenizing TBA mortgage contracts and structuring pooled mortgage backed investment products.",
+    contribution: "Christina leads OWNR\u2019s strategic roadmap, capital markets partnerships, and investor strategy. She designed the platform\u2019s tokenized mortgage infrastructure, including the dual token model for tokenizing TBA mortgage contracts and structuring pooled mortgage-backed investment products.",
     education: "B.A. from Florida International University with a focus on computer science and marketing.",
     tags: ["Capital Markets Strategy", "Financial Data Infrastructure", "Blockchain Product Strategy"],
   },
@@ -15,7 +15,7 @@ const leadership = [
     name: "Daniel Pason",
     title: "Chief Innovation Officer",
     photo: "/deck-assets/headshot-daniel.jpg",
-    bio: "Daniel Pason brings deep expertise in capital markets and securitized products. He has worked across the agency mortgage-backed securities market and securitized products sector, including roles focused on agency MBS pricing strategies, securitized products research, and institutional investor engagement. His experience spans the mortgage market ecosystem as well as broader capital markets including leveraged finance and long short investing.",
+    bio: "Daniel Pason brings deep expertise in capital markets and securitized products. He has worked across the agency mortgage-backed securities market and securitized products sector, including roles focused on agency MBS pricing strategies, securitized products research, and institutional investor engagement. His experience spans the mortgage market ecosystem as well as broader capital markets including leveraged finance and long-short investing.",
     contribution: "Daniel provides the institutional capital markets expertise that grounds OWNR\u2019s infrastructure in real world mortgage market mechanics. His experience across agency MBS trading, pricing, and securitized products ensures that OWNR\u2019s tokenized assets faithfully replicate traditional mortgage securities.",
     tags: ["Agency MBS", "Securitized Products", "Mortgage Market Structure"],
   },
@@ -23,8 +23,8 @@ const leadership = [
     name: "Matthew Moll",
     title: "Chief Operating Officer",
     photo: "/deck-assets/headshot-matthew.jpg",
-    bio: "Matthew Moll is a cross functional operations leader with extensive experience scaling complex operational systems and financial services organizations. He previously advised private equity transactions and held senior operational roles across industries including aerospace, defense, and financial services. Matthew also founded a boutique consulting firm that worked with Fortune 500 companies and private equity-backed businesses.",
-    contribution: "Matthew oversees operations, financial strategy, and execution across the company. His experience translating complex technical systems into scalable operational infrastructure ensures OWNR\u2019s platform can grow into institutional grade market infrastructure.",
+    bio: "Matthew Moll is a cross-functional operations leader with extensive experience scaling complex operational systems and financial services organizations. He previously advised private equity transactions and held senior operational roles across industries including aerospace, defense, and financial services. Matthew also founded a boutique consulting firm that worked with Fortune 500 companies and private equity-backed businesses.",
+    contribution: "Matthew oversees operations, financial strategy, and execution across the company. His experience translating complex technical systems into scalable operational infrastructure ensures OWNR\u2019s platform can grow into institutional-grade market infrastructure.",
     education: "B.S. in Mechanical Engineering from the University of Connecticut. Lean Six Sigma Black Belt certification from Villanova University.",
     tags: ["Operational Infrastructure", "Enterprise Systems", "Scaling Financial Platforms"],
   },
@@ -35,7 +35,7 @@ const engineering = {
   title: "Head of Engineering",
   photo: "/deck-assets/headshot-sergii.jpg",
   bio: "Dr. Sergii Grybniak is a distributed ledger researcher and blockchain infrastructure engineer specializing in consensus protocols and decentralized systems. He serves as Head of Research at Waterfall Network and previously worked as a Web3 Institute researcher contributing to blockchain architecture and distributed consensus systems. Dr. Grybniak is a co-chair of the IEEE working group on distributed ledger technologies and has authored numerous academic publications on blockchain protocols, smart contracts, and decentralized architectures. His previous company Carvoy was acquired by Capital One.",
-  contribution: "Sergii architects the tokenization engine and blockchain infrastructure that powers OWNR\u2019s mortgage backed securities platform. His work ensures the platform is built on secure, scalable distributed systems capable of supporting institutional financial markets.",
+  contribution: "Sergii architects the tokenization engine and blockchain infrastructure that powers OWNR\u2019s mortgage-backed securities platform. His work ensures the platform is built on secure, scalable distributed systems capable of supporting institutional financial markets.",
   tags: ["Distributed Ledger Systems", "Consensus Protocols", "Blockchain Architecture"],
 };
 
@@ -103,7 +103,7 @@ export default function Team() {
                 Across capital markets trading, mortgage securitization, financial data infrastructure, distributed systems engineering, and securities law, the team brings together the disciplines required to rebuild market infrastructure.
               </p>
               <p>
-                From agency mortgage markets and securitized products to blockchain protocol architecture and regulatory frameworks, OWNR&apos;s leadership reflects the intersection of traditional financial markets and next generation financial infrastructure.
+                From agency mortgage markets and securitized products to blockchain protocol architecture and regulatory frameworks, OWNR&apos;s leadership reflects the intersection of traditional financial markets and next-generation financial infrastructure.
               </p>
             </div>
           </div>
@@ -133,12 +133,12 @@ export default function Team() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {leadership.map((person) => (
               <div key={person.name} className="card-hover bg-white rounded-xl border border-slate-200 overflow-hidden animate-on-scroll">
-                <div className="h-56 relative bg-gradient-to-br from-navy/5 to-teal/5">
+                <div className="aspect-square relative bg-gradient-to-br from-navy/5 to-teal/5">
                   <Image
                     src={person.photo}
                     alt={person.name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
 
@@ -177,13 +177,13 @@ export default function Team() {
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-14 text-center">Engineering</h2>
 
-          <div className="card-hover bg-white/[0.04] border border-white/10 rounded-xl overflow-hidden animate-on-scroll">
-            <div className="h-44 relative bg-gradient-to-br from-teal/10 to-navy/50">
+          <div className="card-hover bg-white/[0.04] border border-white/10 rounded-xl overflow-hidden animate-on-scroll md:flex md:flex-row">
+            <div className="aspect-square md:w-72 md:shrink-0 relative bg-gradient-to-br from-teal/10 to-navy/50">
               <Image
                 src={engineering.photo}
                 alt={engineering.name}
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
             </div>
 
@@ -222,12 +222,12 @@ export default function Team() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {advisors.map((advisor) => (
               <div key={advisor.name} className="card-hover rounded-xl border border-slate-200 bg-slate-50 overflow-hidden animate-on-scroll">
-                <div className="h-48 relative bg-gradient-to-br from-navy/5 to-teal/5">
+                <div className="aspect-square relative bg-gradient-to-br from-navy/5 to-teal/5">
                   <Image
                     src={advisor.photo}
                     alt={advisor.name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-7">

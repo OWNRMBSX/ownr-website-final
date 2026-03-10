@@ -24,20 +24,11 @@ export default function Footer() {
           <div className="flex gap-16">
             <div>
               <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
-                Pages
+                Platform
               </h4>
               <div className="space-y-2.5">
-                <Link href="/" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
-                  Home
-                </Link>
                 <Link href="/why-ownr" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Why OWNR
-                </Link>
-                <Link href="/institutions" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
-                  For Institutions
-                </Link>
-                <Link href="/retail" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
-                  For Retail Investors
                 </Link>
                 <Link href="/assets" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Tradeable Assets
@@ -48,27 +39,37 @@ export default function Footer() {
                 <Link href="/resources" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Resources
                 </Link>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
+                Solutions
+              </h4>
+              <div className="space-y-2.5">
+                <Link href="/institutions" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  For Institutions
+                </Link>
+                <Link href="/retail" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  For Retail Investors
+                </Link>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
+                Company
+              </h4>
+              <div className="space-y-2.5">
                 <Link href="/team" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Team
                 </Link>
                 <Link href="/contact" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Contact
                 </Link>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
-                Connect
-              </h4>
-              <div className="space-y-2.5">
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   LinkedIn
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Twitter / X
-                </a>
-                <a href="mailto:info@ownr.com" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
-                  Contact Us
                 </a>
               </div>
             </div>

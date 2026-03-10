@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import WaitlistModal from "./WaitlistModal";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/why-ownr", label: "Why OWNR" },
   { href: "/assets", label: "Tradeable Assets" },
   { href: "/technology", label: "Technology" },
@@ -53,19 +52,15 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                pathname === link.href
-                  ? "text-teal"
-                  : "text-navy/70 hover:text-navy"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {/* Why OWNR */}
+          <Link
+            href="/why-ownr"
+            className={`text-sm font-medium transition-colors ${
+              pathname === "/why-ownr" ? "text-teal" : "text-navy/70 hover:text-navy"
+            }`}
+          >
+            Why OWNR
+          </Link>
 
           {/* Solutions dropdown */}
           <div ref={dropdownRef} className="relative">
@@ -99,6 +94,21 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Platform pages */}
+          {navLinks.filter((l) => l.href !== "/why-ownr").map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-sm font-medium transition-colors ${
+                pathname === link.href
+                  ? "text-teal"
+                  : "text-navy/70 hover:text-navy"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
 
           <Link
             href="/team"
@@ -140,18 +150,15 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3 shadow-lg">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`block text-sm font-medium py-1 ${
-                pathname === link.href ? "text-teal" : "text-navy/70"
-              }`}
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <Link
+            href="/why-ownr"
+            className={`block text-sm font-medium py-1 ${
+              pathname === "/why-ownr" ? "text-teal" : "text-navy/70"
+            }`}
+            onClick={() => setMobileOpen(false)}
+          >
+            Why OWNR
+          </Link>
 
           <div className="pl-0">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 mt-2">Solutions</p>
@@ -168,6 +175,19 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+
+          {navLinks.filter((l) => l.href !== "/why-ownr").map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`block text-sm font-medium py-1 ${
+                pathname === link.href ? "text-teal" : "text-navy/70"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
 
           <Link
             href="/team"
