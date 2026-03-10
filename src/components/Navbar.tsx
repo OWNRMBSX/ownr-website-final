@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/why-ownr", label: "Why OWNR" },
 ];
 
 export default function Navbar() {
