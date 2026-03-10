@@ -1,48 +1,61 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white relative overflow-hidden">
-      {/* Subtle glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-teal/30 to-transparent" />
-
+    <footer className="bg-white border-t border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="flex flex-col md:flex-row justify-between gap-10 mb-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="max-w-sm">
             <Image
-              src="/deck-assets/image5.png"
+              src="/deck-assets/image2.png"
               alt="OWNR"
               width={140}
               height={36}
               className="h-8 w-auto mb-4"
             />
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Modernizing mortgage-backed securities infrastructure for institutional and retail markets.
+            </p>
           </div>
 
-          {/* Spacer */}
-          <div />
-
-          {/* Connect */}
-          <div>
-            <h4 className="text-sm font-semibold text-teal-light mb-4 uppercase tracking-wider">
-              Connect
-            </h4>
-            <div className="space-y-2.5">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                LinkedIn
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Twitter / X
-              </a>
-              <a href="mailto:info@ownr.com" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Contact Us
-              </a>
+          {/* Navigation */}
+          <div className="flex gap-16">
+            <div>
+              <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
+                Pages
+              </h4>
+              <div className="space-y-2.5">
+                <Link href="/" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Home
+                </Link>
+                <Link href="/why-ownr" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Why OWNR
+                </Link>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
+                Connect
+              </h4>
+              <div className="space-y-2.5">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  LinkedIn
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Twitter / X
+                </a>
+                <a href="mailto:info@ownr.com" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Contact Us
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/[0.06] pt-8">
-          <p className="text-xs text-white/30 leading-relaxed max-w-4xl">
+        <div className="border-t border-slate-200 pt-8">
+          <p className="text-xs text-slate-400 leading-relaxed max-w-4xl">
             CONFIDENTIAL — This website and its contents are for informational
             purposes only and do not constitute an offer to sell or a
             solicitation of an offer to buy any securities. OWNR tokens are not
@@ -50,7 +63,7 @@ export default function Footer() {
             indicative of future results. All investments involve risk.
             *Confidential materials shared at OWNR&apos;s discretion.
           </p>
-          <p className="text-xs text-white/30 mt-4">
+          <p className="text-xs text-slate-400 mt-4">
             &copy; {new Date().getFullYear()} OWNR. All rights reserved.
           </p>
         </div>

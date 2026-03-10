@@ -434,7 +434,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 6: CTA — Get Started */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
           <span className="badge-pill mb-6">Get Started</span>
           <h2 className="text-3xl md:text-5xl font-bold text-navy mb-2">
