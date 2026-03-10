@@ -4,18 +4,16 @@ export default function WhyOwnr() {
   return (
     <>
       {/* SECTION 1: Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
-        {/* Subtle grid background */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(#1B3142 1px, transparent 1px), linear-gradient(90deg, #1B3142 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-navy text-white grid-overlay">
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Copy */}
           <div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-navy mb-8 leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-[1.1]">
               Why OWNR
             </h1>
-            <div className="space-y-5 text-slate-500 text-lg leading-relaxed max-w-xl">
-              <p className="text-xl text-navy/80 font-medium leading-relaxed">
+            <div className="space-y-5 text-white/60 text-lg leading-relaxed max-w-xl">
+              <p className="text-xl text-white/80 font-medium leading-relaxed">
                 Financial infrastructure determines how opportunity moves through the economy.
               </p>
               <p>
@@ -24,7 +22,7 @@ export default function WhyOwnr() {
               <p>
                 Yet the infrastructure supporting those markets has changed far less than the technology surrounding it.
               </p>
-              <p className="text-navy font-medium italic border-l-2 border-teal pl-4">
+              <p className="text-white font-medium italic border-l-2 border-teal pl-4">
                 OWNR was created with a simple belief: financial markets should be more transparent, more efficient, and more accessible than they are today.
               </p>
             </div>
@@ -44,17 +42,17 @@ export default function WhyOwnr() {
               { label: "Homeowners", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
             ].map((step, i, arr) => (
               <div key={step.label} className="w-full max-w-xs animate-on-scroll">
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 bg-white">
-                  <div className="w-10 h-10 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center text-teal shrink-0">
+                <div className="flex items-center gap-4 p-5 rounded-xl border border-white/10 bg-white/5">
+                  <div className="w-10 h-10 rounded-lg bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} />
                     </svg>
                   </div>
-                  <span className="text-sm font-semibold text-navy">{step.label}</span>
+                  <span className="text-sm font-semibold text-white">{step.label}</span>
                 </div>
                 {i < arr.length - 1 && (
                   <div className="flex flex-col items-center py-2">
-                    <div className="w-px h-5 bg-gradient-to-b from-slate-300 to-teal/40" />
+                    <div className="w-px h-5 bg-gradient-to-b from-white/10 to-teal/30" />
                     <svg className="w-3 h-3 text-teal/60" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
@@ -67,12 +65,12 @@ export default function WhyOwnr() {
       </section>
 
       {/* SECTION 2: Housing Finance Matters */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+      <section className="section-padding bg-white">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
             Housing finance connects global capital to everyday life
           </h2>
-          <div className="space-y-5 text-white/60 text-lg leading-relaxed text-left max-w-2xl mx-auto">
+          <div className="space-y-5 text-slate-500 text-lg leading-relaxed text-left max-w-2xl mx-auto">
             <p>
               Mortgage-backed securities are not just another financial asset.
             </p>
@@ -88,17 +86,17 @@ export default function WhyOwnr() {
             <p>
               The efficiency of this market directly influences the availability and cost of housing finance.
             </p>
-            <p className="text-white font-medium">
+            <p className="text-navy font-medium">
               Better infrastructure does not only improve trading.
             </p>
-            <p className="text-white font-medium">
+            <p className="text-navy font-medium">
               It improves how capital reaches homeowners.
             </p>
           </div>
         </div>
 
         {/* Capital flow diagram */}
-        <div className="relative z-10 max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {[
               { label: "Institutional Investors", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
@@ -108,15 +106,15 @@ export default function WhyOwnr() {
             ].map((step, i, arr) => (
               <div key={step.label} className="flex items-center gap-3 animate-on-scroll">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-teal-light">
+                  <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-teal shadow-sm">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} />
                     </svg>
                   </div>
-                  <span className="text-xs font-semibold text-white/80 mt-2 max-w-[100px]">{step.label}</span>
+                  <span className="text-xs font-semibold text-navy mt-2 max-w-[100px]">{step.label}</span>
                 </div>
                 {i < arr.length - 1 && (
-                  <div className="hidden md:block w-12 h-px bg-gradient-to-r from-white/10 to-teal/30 mb-6" />
+                  <div className="hidden md:block w-12 h-px bg-gradient-to-r from-slate-300 to-teal/40 mb-6" />
                 )}
               </div>
             ))}
@@ -125,19 +123,19 @@ export default function WhyOwnr() {
       </section>
 
       {/* SECTION 3: Liquidity and Mortgage Costs */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Copy */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                 Liquidity reduces friction in financial markets
               </h2>
-              <div className="space-y-5 text-slate-500 text-lg leading-relaxed">
+              <div className="space-y-5 text-white/60 text-lg leading-relaxed">
                 <p>
                   Markets function best when capital can move freely between investors and borrowers.
                 </p>
-                <p className="text-navy font-medium">
+                <p className="text-white font-medium">
                   When liquidity is deep and transparent:
                 </p>
                 <ul className="space-y-3 ml-1">
@@ -148,7 +146,7 @@ export default function WhyOwnr() {
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
-                      <span className="text-slate-600">{item}</span>
+                      <span className="text-white/70">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -158,7 +156,7 @@ export default function WhyOwnr() {
                 <p>
                   In mortgage markets, that can ultimately contribute to more efficient financing conditions for lenders and borrowers.
                 </p>
-                <p className="text-navy font-medium border-l-2 border-teal pl-4">
+                <p className="text-white font-medium border-l-2 border-teal pl-4">
                   Improving infrastructure is not only about speed. It is about strengthening the foundations of one of the most important financial systems in the world.
                 </p>
               </div>
@@ -174,7 +172,7 @@ export default function WhyOwnr() {
               ].map((bar) => (
                 <div key={bar.label} className="w-full flex items-center gap-4 animate-on-scroll">
                   <div className={`h-12 ${bar.width} rounded-lg bg-gradient-to-r from-teal/20 to-teal ${bar.opacity} transition-all duration-1000`} />
-                  <span className="text-xs font-medium text-slate-400 whitespace-nowrap">{bar.label}</span>
+                  <span className="text-xs font-medium text-white/40 whitespace-nowrap">{bar.label}</span>
                 </div>
               ))}
             </div>
@@ -183,13 +181,13 @@ export default function WhyOwnr() {
       </section>
 
       {/* SECTION 4: Legacy Infrastructure */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
               Mortgage markets still rely on infrastructure built decades ago
             </h2>
-            <div className="space-y-5 text-white/60 text-lg leading-relaxed text-left max-w-2xl mx-auto">
+            <div className="space-y-5 text-slate-500 text-lg leading-relaxed text-left max-w-2xl mx-auto">
               <p>
                 Despite being one of the largest bond markets in the world, mortgage securities still rely on systems designed long before modern digital infrastructure existed.
               </p>
@@ -197,7 +195,7 @@ export default function WhyOwnr() {
               <p>Ownership records are fragmented across multiple intermediaries.</p>
               <p>Access to the underlying assets remains limited for many investors.</p>
               <p>These systems were not designed for programmable financial networks.</p>
-              <p className="text-white font-medium">
+              <p className="text-navy font-medium">
                 Modern infrastructure makes it possible to rethink how these markets operate.
               </p>
               <p>
@@ -208,8 +206,8 @@ export default function WhyOwnr() {
 
           {/* Comparison */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="p-8 rounded-xl border border-white/10 bg-white/5 animate-on-scroll">
-              <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-6">Legacy System</p>
+            <div className="p-8 rounded-xl border border-slate-200 bg-slate-50 animate-on-scroll">
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Legacy System</p>
               <ul className="space-y-4">
                 {[
                   "T+1 settlement",
@@ -217,17 +215,17 @@ export default function WhyOwnr() {
                   "Limited access",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+                    <div className="w-5 h-5 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
                     </div>
-                    <span className="text-white/60 font-medium">{item}</span>
+                    <span className="text-slate-500 font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="p-8 rounded-xl border border-teal/25 bg-teal/10 animate-on-scroll">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-6">Modern Infrastructure</p>
+            <div className="p-8 rounded-xl border border-teal/20 bg-teal/[0.03] animate-on-scroll">
+              <p className="text-xs font-bold uppercase tracking-wider text-teal mb-6">Modern Infrastructure</p>
               <ul className="space-y-4">
                 {[
                   "Atomic settlement",
@@ -235,12 +233,12 @@ export default function WhyOwnr() {
                   "Programmable compliance",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-teal/15 border border-teal/25 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-teal-light" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-5 h-5 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center">
+                      <svg className="w-3 h-3 text-teal" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-white font-medium">{item}</span>
+                    <span className="text-navy font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -250,12 +248,12 @@ export default function WhyOwnr() {
       </section>
 
       {/* SECTION 5: Expanding Access */}
-      <section className="section-padding bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight text-center">
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-center">
             Financial markets should not be limited by outdated infrastructure
           </h2>
-          <div className="space-y-5 text-slate-500 text-lg leading-relaxed mb-16">
+          <div className="space-y-5 text-white/60 text-lg leading-relaxed mb-16">
             <p>
               Many of the most stable income-producing financial assets have historically been accessible only through institutional channels.
             </p>
@@ -268,7 +266,7 @@ export default function WhyOwnr() {
             <p>
               Advances in financial infrastructure now make it possible to broaden participation in these markets.
             </p>
-            <p className="text-navy font-medium">
+            <p className="text-white font-medium">
               OWNR believes that expanding access responsibly can strengthen financial markets while opening new opportunities for investors.
             </p>
             <p>
@@ -278,25 +276,25 @@ export default function WhyOwnr() {
 
           {/* Access expansion visual */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-xl border border-slate-200 bg-white text-center animate-on-scroll">
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Today</p>
+            <div className="p-8 rounded-xl border border-white/10 bg-white/5 text-center animate-on-scroll">
+              <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-6">Today</p>
               <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-slate-500 text-center leading-tight">Institutional<br />access</span>
+                <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                  <span className="text-xs font-semibold text-white/50 text-center leading-tight">Institutional<br />access</span>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 rounded-xl border border-teal/20 bg-teal/[0.03] text-center animate-on-scroll">
-              <p className="text-xs font-bold uppercase tracking-wider text-teal mb-6">Future</p>
+            <div className="p-8 rounded-xl border border-teal/25 bg-teal/10 text-center animate-on-scroll">
+              <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-6">Future</p>
               <div className="flex justify-center gap-3">
                 {[
                   "Institutional",
                   "Advisors",
                   "Individual investors",
                 ].map((label, i) => (
-                  <div key={label} className={`rounded-full border flex items-center justify-center ${i === 0 ? "w-20 h-20 bg-teal/10 border-teal/20" : i === 1 ? "w-16 h-16 bg-teal/10 border-teal/15" : "w-14 h-14 bg-teal/10 border-teal/10"}`}>
-                    <span className="text-[10px] font-semibold text-teal text-center leading-tight px-1">{label}</span>
+                  <div key={label} className={`rounded-full border flex items-center justify-center ${i === 0 ? "w-20 h-20 bg-teal/15 border-teal/25" : i === 1 ? "w-16 h-16 bg-teal/15 border-teal/20" : "w-14 h-14 bg-teal/15 border-teal/15"}`}>
+                    <span className="text-[10px] font-semibold text-teal-light text-center leading-tight px-1">{label}</span>
                   </div>
                 ))}
               </div>
@@ -306,13 +304,13 @@ export default function WhyOwnr() {
       </section>
 
       {/* SECTION 6: Why Now */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
               A new era of financial infrastructure is emerging
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed">
               Several forces are converging to reshape how financial assets move through global markets.
             </p>
           </div>
@@ -336,21 +334,21 @@ export default function WhyOwnr() {
                 icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
               },
             ].map((block) => (
-              <div key={block.title} className="feature-card p-6 text-center animate-on-scroll">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light">
+              <div key={block.title} className="p-6 text-center rounded-xl border border-slate-200 bg-white shadow-sm animate-on-scroll">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={block.icon} />
                   </svg>
                 </div>
-                <h3 className="text-sm font-bold text-white">{block.title}</h3>
+                <h3 className="text-sm font-bold text-navy">{block.title}</h3>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-12">
+          <p className="text-center text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto mt-12">
             Together, these developments are enabling the next evolution of capital markets.
           </p>
-          <p className="text-center text-white font-medium text-lg mt-4">
+          <p className="text-center text-navy font-medium text-lg mt-4">
             OWNR was built to help bring one of the world&apos;s most important financial markets into that future.
           </p>
         </div>
