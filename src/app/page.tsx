@@ -39,7 +39,7 @@ export default function Home() {
               },
               {
                 stat: "0%",
-                label: "RETAIL ACCESS TODAY",
+                label: "RETAIL ACCESS TODAY*",
                 desc: "Everyday investors have never been able to directly invest in MBS pools. OWNR changes that with fractional tokens from $10.",
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -388,10 +388,10 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-5xl font-bold mb-2">
-              Three ways mortgage assets
+              Three Assets Currently
             </h2>
             <h2 className="text-3xl md:text-5xl font-bold">
-              <span className="text-gradient-teal">move onchain.</span>
+              <span className="text-gradient-teal">Supported</span>
             </h2>
           </div>
 
