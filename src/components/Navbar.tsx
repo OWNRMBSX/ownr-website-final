@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/why-ownr", label: "Why OWNR" },
+  { href: "/resources", label: "Resources" },
 ];
 
 const solutionsLinks = [
