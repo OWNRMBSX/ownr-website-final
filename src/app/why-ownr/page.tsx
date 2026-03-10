@@ -49,7 +49,7 @@ export default function WhyOwnr() {
             {[
               { stat: "$15T", label: "MBS Market Size", desc: "The second largest fixed-income asset class" },
               { stat: "$350B+", label: "Daily Volume", desc: "One of the most liquid markets on Earth" },
-              { stat: "0%", label: "Retail Access", desc: "Until now, closed to everyday investors" },
+              { stat: "0%*", label: "Retail Access", desc: "Until now, closed to everyday investors" },
             ].map((item) => (
               <div key={item.label} className="p-6 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
                 <div className="flex items-baseline gap-4 mb-1">
@@ -60,6 +60,9 @@ export default function WhyOwnr() {
               </div>
             ))}
           </div>
+          <p className="hidden lg:block mt-6 text-xs text-white/25 max-w-md">
+            *Retail investors are still prohibited from investing in MBS assets like TBAs and CUSIP-specific pools, but OWNR provides access through tokenized funds.
+          </p>
         </div>
       </section>
 
