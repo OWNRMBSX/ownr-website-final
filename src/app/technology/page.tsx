@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Technology",
+  description: "OWNR provides multi-layer infrastructure connecting traditional mortgage markets with modern blockchain financial networks.",
+};
 
 const architectureLayers = [
   {
@@ -69,7 +75,7 @@ export default function Technology() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               A layered infrastructure for{" "}
               <span className="text-gradient-teal">mortgage markets</span>
             </h2>
@@ -238,7 +244,7 @@ export default function Technology() {
 
             {/* Right: Network visualization */}
             <div className="hidden lg:flex items-center justify-center">
-              <div className="relative w-80 h-80 animate-on-scroll">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 animate-on-scroll">
                 {/* Network nodes */}
                 {[
                   { x: "50%", y: "10%", label: "Validator" },
@@ -367,7 +373,7 @@ export default function Technology() {
         <Image src="/deck-assets/image42.jpg" alt="" fill className="object-cover opacity-15" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/95 to-navy/80 z-[1]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Infrastructure for the next generation of mortgage markets
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

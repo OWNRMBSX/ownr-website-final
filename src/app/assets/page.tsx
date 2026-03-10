@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tradeable Assets",
+  description: "Explore tokenized mortgage pools, ETFs, and funds on OWNR. Compliant digital representations of real mortgage-backed financial instruments.",
+};
 
 const assetOverview = [
   {
@@ -80,7 +86,7 @@ export default function TradeableAssets() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               Three ways mortgage assets trade via OWNR
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -303,7 +309,7 @@ export default function TradeableAssets() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               Tokenized assets unlock new{" "}
               <span className="text-gradient-teal">financial capabilities</span>
             </h2>
@@ -343,7 +349,7 @@ export default function TradeableAssets() {
       <section className="section-padding bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               The roadmap extends far beyond today&apos;s assets
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -380,7 +386,7 @@ export default function TradeableAssets() {
         <Image src="/deck-assets/image16.jpg" alt="" fill className="object-cover opacity-15" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/95 to-navy/80 z-[1]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Tradeable financial assets built for next-generation capital markets
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

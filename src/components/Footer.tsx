@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="grid grid-cols-3 gap-8 sm:gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-16">
             <div>
               <h4 className="text-sm font-semibold text-navy mb-4 uppercase tracking-wider">
                 Platform

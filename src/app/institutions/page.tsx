@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Institutional Solutions",
+  description: "OWNR enables financial institutions to bring mortgage assets onto programmable infrastructure for issuance, distribution, liquidity, and capital efficiency.",
+};
 
 export default function Institutions() {
   return (
@@ -57,7 +63,7 @@ export default function Institutions() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               A shared infrastructure for institutional participants
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -106,7 +112,7 @@ export default function Institutions() {
       <section className="section-padding bg-navy text-white grid-overlay">
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Every Advantage. <span className="text-gradient-teal">Zero Disruption.</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
@@ -183,7 +189,7 @@ export default function Institutions() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               Built for Efficiency
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -457,7 +463,7 @@ export default function Institutions() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               Unlocking programmable mortgage markets
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -501,7 +507,7 @@ export default function Institutions() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/95 to-navy/80 z-[1]" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Build the next generation of mortgage markets
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

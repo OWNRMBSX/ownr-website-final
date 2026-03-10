@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Retail Investors",
+  description: "Access mortgage-backed securities from $10. OWNR brings the $15T MBS market to individual investors through tokenized ETFs and mortgage funds.",
+};
 
 export default function Retail() {
   return (
@@ -84,7 +90,7 @@ export default function Retail() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               Why investors are paying attention to{" "}
               <span className="text-gradient-teal">mortgage markets</span>
             </h2>
@@ -126,7 +132,7 @@ export default function Retail() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
                   </svg>
                 </div>
-                <div className="text-2xl font-bold text-teal mb-1">{item.stat}</div>
+                <div className="text-xl sm:text-2xl font-bold text-teal mb-1">{item.stat}</div>
                 <h3 className="text-base font-bold text-navy mb-2">{item.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
               </div>
@@ -144,7 +150,7 @@ export default function Retail() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               How investors <span className="text-gradient-teal">earn income</span>
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -254,7 +260,7 @@ export default function Retail() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               Why onchain markets matter{" "}
               <span className="text-gradient-teal">for investors</span>
             </h2>
@@ -309,10 +315,10 @@ export default function Retail() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-2">
               Two ways to
             </h2>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gradient-teal">participate</span>
             </h2>
           </div>
@@ -450,7 +456,7 @@ export default function Retail() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/95 to-navy/80 z-[1]" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Get early access
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

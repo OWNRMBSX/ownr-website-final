@@ -188,7 +188,7 @@ export default function Resources() {
       <section className="relative section-padding bg-navy text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Building the infrastructure for next-generation capital markets
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

@@ -17,9 +17,35 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "OWNR | Where Ownership Meets Opportunity",
+  title: {
+    default: "OWNR | Where Ownership Meets Opportunity",
+    template: "%s | OWNR",
+  },
   description:
     "OWNR is the application layer for tokenized markets — starting with the $15T mortgage-backed securities market. Institutional infrastructure meets retail access.",
+  metadataBase: new URL("https://ownr.finance"),
+  openGraph: {
+    title: "OWNR | Where Ownership Meets Opportunity",
+    description:
+      "Tokenized mortgage-backed securities infrastructure for institutional and retail markets.",
+    url: "https://ownr.finance",
+    siteName: "OWNR",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OWNR | Where Ownership Meets Opportunity",
+    description:
+      "Tokenized mortgage-backed securities infrastructure for institutional and retail markets.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://ownr.finance",
+  },
 };
 
 export default function RootLayout({

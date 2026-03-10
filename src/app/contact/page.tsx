@@ -75,7 +75,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="Your full name"
                 />
               </div>
@@ -89,7 +89,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="you@company.com"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function Contact() {
                   type="text"
                   id="org"
                   name="org"
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="Company or fund name"
                 />
               </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                     required
                     value={inquiryType}
                     onChange={(e) => setInquiryType(e.target.value)}
-                    className={`w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors appearance-none ${!inquiryType ? "text-slate-300" : ""}`}
+                    className={`w-full px-4 py-2.5 sm:py-3 rounded-lg border border-slate-200 bg-white text-navy focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors appearance-none ${!inquiryType ? "text-slate-300" : ""}`}
                   >
                     <option value="" disabled>Select inquiry type</option>
                     <option value="institutional">Institutional Investor</option>
@@ -140,7 +140,7 @@ export default function Contact() {
                   name="message"
                   rows={5}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors resize-none"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors resize-none"
                   placeholder="Tell us about your interest in OWNR."
                 />
               </div>

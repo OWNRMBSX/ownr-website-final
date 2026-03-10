@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why OWNR",
+  description: "Financial infrastructure determines how opportunity moves through the economy. Learn why OWNR is modernizing the $15T mortgage-backed securities market.",
+};
 
 export default function WhyOwnr() {
   return (
@@ -71,7 +77,7 @@ export default function WhyOwnr() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight">
                 Housing finance connects global capital to everyday life
               </h2>
               <div className="space-y-5 text-slate-500 text-lg leading-relaxed">
@@ -143,7 +149,7 @@ export default function WhyOwnr() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight">
                 Liquidity reduces friction in financial markets
               </h2>
               <div className="space-y-5 text-white/60 text-lg leading-relaxed">
@@ -201,7 +207,7 @@ export default function WhyOwnr() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-16">
             <div className="lg:col-span-3">
-              <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight">
                 Mortgage markets still rely on infrastructure built decades ago
               </h2>
               <div className="space-y-5 text-slate-500 text-lg leading-relaxed">
@@ -292,7 +298,7 @@ export default function WhyOwnr() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight">
                 Financial markets should not be limited by outdated infrastructure
               </h2>
               <div className="space-y-5 text-white/60 text-lg leading-relaxed">
@@ -370,7 +376,7 @@ export default function WhyOwnr() {
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
               A new era of financial infrastructure is emerging
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
@@ -429,7 +435,7 @@ export default function WhyOwnr() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 leading-tight">
             Infrastructure shapes opportunity
           </h2>
           <div className="space-y-5 text-white/60 text-lg leading-relaxed mb-12">

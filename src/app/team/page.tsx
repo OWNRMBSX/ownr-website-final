@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Team",
+  description: "Meet the OWNR team — experienced leaders from capital markets, mortgage finance, distributed systems engineering, and regulatory law.",
+};
 
 const leadership = [
   {
@@ -90,7 +96,7 @@ export default function Team() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6 leading-tight">
                 Experience across the systems that power global capital markets.
               </h2>
             </div>
@@ -199,7 +205,7 @@ export default function Team() {
       <section className="relative section-padding bg-navy text-white overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)", backgroundSize: "40px 40px" }} />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Building the infrastructure for the next generation of mortgage capital markets.
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">

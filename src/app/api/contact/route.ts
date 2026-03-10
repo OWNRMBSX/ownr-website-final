@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { insertSubmission } from "@/lib/db";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT = 5;
@@ -20,7 +21,7 @@ function sanitize(value: unknown, maxLength = 1000): string {
   return value.slice(0, maxLength).trim();
 }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_RE = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export async function POST(req: NextRequest) {
   try {
@@ -53,14 +54,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    console.log("Contact form submission:", {
-      name,
-      email,
-      org: org || "N/A",
-      inquiryType,
-      message: message.slice(0, 500),
-      timestamp: new Date().toISOString(),
-    });
+    await insertSubmission({ name, email, org: org || "", inquiryType, message, ip });
 
     return NextResponse.json({ success: true });
   } catch {

@@ -12,7 +12,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="badge-pill mb-4">The Opportunity</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               The Largest Untokenized Market<br />
               <span className="text-gradient-teal">in the World</span>
             </h2>
@@ -64,7 +64,7 @@ export default function Home() {
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
                   {item.icon}
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-navy mb-2">{item.stat}</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-2">{item.stat}</div>
                 <div className="text-xs font-bold text-navy tracking-wider mb-3">{item.label}</div>
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Text */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
                 Financial assets are becoming{" "}
                 <span className="text-gradient-teal">programmable.</span>
               </h2>
@@ -165,7 +165,7 @@ export default function Home() {
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">
               Infrastructure Evolution
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-6">
               Markets evolve when <span className="text-gradient-teal">infrastructure</span> evolves.
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
 
           {/* Horizontal timeline */}
-          <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 max-w-5xl mx-auto">
+          <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 md:gap-0 max-w-5xl mx-auto">
             {[
               { label: "Floor Exchanges", era: "1792" },
               { label: "Electronic Trading", era: "1971" },
@@ -205,7 +205,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-pill-dark mb-4">Why OWNR</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Built for the Next Era
             </h2>
             <p className="text-white/60 max-w-3xl mx-auto text-lg">
@@ -305,10 +305,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <span className="badge-pill mb-4">How OWNR Works</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-2">
               Two Markets.
             </h2>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gradient-teal">One Platform.</span>
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto text-lg">
@@ -387,10 +387,10 @@ export default function Home() {
       <section className="section-padding bg-navy text-white grid-overlay">
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-5xl font-bold mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
               Three Assets Currently
             </h2>
-            <h2 className="text-3xl md:text-5xl font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               <span className="text-gradient-teal">Supported</span>
             </h2>
           </div>
@@ -437,10 +437,10 @@ export default function Home() {
       <section className="section-padding bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
           <span className="badge-pill mb-6">Get Started</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-2">
             The Future of MBS
           </h2>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gradient-teal">Starts Here</span>
           </h2>
           <p className="text-slate-500 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
