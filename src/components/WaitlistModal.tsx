@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const investorTypes = [
   { value: "institutional", label: "Institutional Investor" },
@@ -78,7 +79,7 @@ export default function WaitlistModal() {
         Join Waitlist
       </button>
 
-      {open && (
+      {open && createPortal(
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
           {/* Backdrop */}
           <div className="absolute inset-0 bg-navy/60 backdrop-blur-sm" />
@@ -186,7 +187,8 @@ export default function WaitlistModal() {
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

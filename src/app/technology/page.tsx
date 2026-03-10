@@ -159,8 +159,8 @@ export default function Technology() {
       </section>
 
       {/* SECTION 4: Trading Infrastructure */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Flow */}
             <div className="hidden lg:flex flex-col items-center gap-0 order-1 lg:order-none">
@@ -170,14 +170,14 @@ export default function Technology() {
                 { label: "Clearing & Settlement", sub: "DTCC workflows, FINRA TRACE" },
               ].map((step, i, arr) => (
                 <div key={step.label} className="w-full max-w-xs animate-on-scroll">
-                  <div className="p-5 rounded-xl border border-white/10 bg-white/[0.04] text-center">
-                    <div className="font-bold text-white mb-1">{step.label}</div>
-                    <div className="text-sm text-white/40">{step.sub}</div>
+                  <div className="p-5 rounded-xl border border-slate-200 bg-white text-center shadow-sm">
+                    <div className="font-bold text-navy mb-1">{step.label}</div>
+                    <div className="text-sm text-slate-500">{step.sub}</div>
                   </div>
                   {i < arr.length - 1 && (
                     <div className="flex flex-col items-center py-2">
-                      <div className="w-px h-5 bg-gradient-to-b from-white/10 to-teal/30" />
-                      <svg className="w-3 h-3 text-teal/60" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="w-px h-5 bg-gradient-to-b from-slate-200 to-teal/40" />
+                      <svg className="w-3 h-3 text-teal/50" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </div>
@@ -187,18 +187,18 @@ export default function Technology() {
             </div>
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-4">Layer 02</p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+              <p className="text-xs font-bold uppercase tracking-wider text-teal mb-4">Layer 02</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 leading-tight">
                 Integration with regulated trading venues
               </h2>
-              <div className="space-y-5 text-white/60 text-lg leading-relaxed">
+              <div className="space-y-5 text-slate-500 text-lg leading-relaxed">
                 <p>
                   OWNR tokenized assets are designed to be traded through regulated market infrastructure. The platform integrates with Alternative Trading Systems to enable compliant exchange of tokenized mortgage assets.
                 </p>
                 <p>
                   Executed trades integrate directly with existing financial infrastructure including DTCC clearing workflows and FINRA TRACE reporting.
                 </p>
-                <p className="text-white font-medium border-l-2 border-teal pl-4">
+                <p className="text-navy font-medium border-l-2 border-teal pl-4">
                   This architecture allows tokenized mortgage assets to operate within the same market structure that supports traditional mortgage trading.
                 </p>
               </div>
@@ -336,13 +336,13 @@ export default function Technology() {
       </section>
 
       {/* SECTION 7: Application Layer */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-4">Layer 04</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+      <section className="section-padding bg-slate-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-bold uppercase tracking-wider text-teal mb-4">Layer 04</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6 leading-tight">
             Financial applications built on programmable assets
           </h2>
-          <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mb-14">
+          <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto mb-14">
             Once mortgage assets operate on OWNR infrastructure, new financial applications can be built on top of them, including both institutional trading systems and retail investment platforms.
           </p>
 
@@ -353,13 +353,13 @@ export default function Technology() {
               { label: "Analytics", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
               { label: "Liquidity Infra", icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" },
             ].map((node) => (
-              <div key={node.label} className="p-5 rounded-xl border border-white/10 bg-white/[0.04] animate-on-scroll">
-                <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light">
+              <div key={node.label} className="p-5 rounded-xl border border-slate-200 bg-white shadow-sm animate-on-scroll">
+                <div className="w-10 h-10 mx-auto mb-3 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={node.icon} />
                   </svg>
                 </div>
-                <span className="text-sm font-semibold text-white">{node.label}</span>
+                <span className="text-sm font-semibold text-navy">{node.label}</span>
               </div>
             ))}
           </div>
