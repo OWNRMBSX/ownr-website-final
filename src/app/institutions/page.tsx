@@ -184,7 +184,7 @@ export default function Institutions() {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
             <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
-              Built for institutional infrastructure
+              Built for Efficiency
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">
               Mortgage markets operate within highly structured regulatory, custody, and operational frameworks. OWNR infrastructure is designed to integrate with these systems rather than replace them.
