@@ -10,7 +10,7 @@ export default function Institutions() {
           <div>
             <span className="badge-pill mb-5">Institutional Solutions</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-navy mb-8 leading-[1.05]">
-              Infrastructure for the next generation of mortgage markets
+              The Next Generation of Mortgage Markets
             </h1>
             <div className="space-y-5 text-slate-500 text-lg leading-relaxed max-w-xl">
               <p>
