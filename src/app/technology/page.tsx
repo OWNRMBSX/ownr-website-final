@@ -6,25 +6,21 @@ const architectureLayers = [
     num: "01",
     title: "Tokenization Engine",
     sub: "Creates digital representations of mortgage securities",
-    color: "bg-slate-50 border-slate-200",
   },
   {
     num: "02",
     title: "Trading Infrastructure",
     sub: "Regulated venues for compliant asset exchange",
-    color: "bg-teal/10 border-teal/20",
   },
   {
     num: "03",
     title: "Network Layer",
     sub: "Distributed ownership and settlement records",
-    color: "bg-teal/20 border-teal/30",
   },
   {
     num: "04",
     title: "Application Layer",
     sub: "Financial products and market access",
-    color: "bg-navy border-navy text-white",
   },
 ];
 
@@ -50,16 +46,16 @@ export default function Technology() {
             <div className="hidden lg:flex flex-col items-center gap-0">
               {architectureLayers.map((layer, i, arr) => (
                 <div key={layer.num} className="w-full max-w-sm animate-on-scroll">
-                  <div className={`p-5 rounded-xl border ${layer.color} flex items-center gap-4`}>
-                    <span className={`text-lg font-bold ${layer.color.includes("text-white") ? "text-white/20" : "text-teal/30"}`}>{layer.num}</span>
+                  <div className="p-5 rounded-xl border border-slate-200 bg-white flex items-center gap-4 shadow-sm">
+                    <span className="text-lg font-bold text-teal/30">{layer.num}</span>
                     <div>
-                      <div className={`font-bold text-sm ${layer.color.includes("text-white") ? "" : "text-navy"}`}>{layer.title}</div>
-                      <div className={`text-xs ${layer.color.includes("text-white") ? "text-white/50" : "text-slate-400"}`}>{layer.sub}</div>
+                      <div className="font-bold text-sm text-navy">{layer.title}</div>
+                      <div className="text-xs text-slate-400">{layer.sub}</div>
                     </div>
                   </div>
                   {i < arr.length - 1 && (
                     <div className="flex flex-col items-center py-1.5">
-                      <div className="w-px h-4 bg-gradient-to-b from-white/10 to-teal/20" />
+                      <div className="w-px h-4 bg-gradient-to-b from-slate-300 to-teal/30" />
                     </div>
                   )}
                 </div>

@@ -28,16 +28,15 @@ const leadership = [
     education: "B.S. in Mechanical Engineering from the University of Connecticut. Lean Six Sigma Black Belt certification from Villanova University.",
     tags: ["Operational Infrastructure", "Enterprise Systems", "Scaling Financial Platforms"],
   },
+  {
+    name: "Sergii Grybniak, PhD",
+    title: "Head of Engineering",
+    photo: "/deck-assets/headshot-sergii.jpg",
+    bio: "Dr. Sergii Grybniak is a distributed ledger researcher and blockchain infrastructure engineer specializing in consensus protocols and decentralized systems. He serves as Head of Research at Waterfall Network and previously worked as a Web3 Institute researcher contributing to blockchain architecture and distributed consensus systems. Dr. Grybniak is a co-chair of the IEEE working group on distributed ledger technologies and has authored numerous academic publications on blockchain protocols, smart contracts, and decentralized architectures. His previous company Carvoy was acquired by Capital One.",
+    contribution: "Sergii architects the tokenization engine and blockchain infrastructure that powers OWNR\u2019s mortgage-backed securities platform. His work ensures the platform is built on secure, scalable distributed systems capable of supporting institutional financial markets.",
+    tags: ["Distributed Ledger Systems", "Consensus Protocols", "Blockchain Architecture"],
+  },
 ];
-
-const engineering = {
-  name: "Sergii Grybniak, PhD",
-  title: "Head of Engineering",
-  photo: "/deck-assets/headshot-sergii.jpg",
-  bio: "Dr. Sergii Grybniak is a distributed ledger researcher and blockchain infrastructure engineer specializing in consensus protocols and decentralized systems. He serves as Head of Research at Waterfall Network and previously worked as a Web3 Institute researcher contributing to blockchain architecture and distributed consensus systems. Dr. Grybniak is a co-chair of the IEEE working group on distributed ledger technologies and has authored numerous academic publications on blockchain protocols, smart contracts, and decentralized architectures. His previous company Carvoy was acquired by Capital One.",
-  contribution: "Sergii architects the tokenization engine and blockchain infrastructure that powers OWNR\u2019s mortgage-backed securities platform. His work ensures the platform is built on secure, scalable distributed systems capable of supporting institutional financial markets.",
-  tags: ["Distributed Ledger Systems", "Consensus Protocols", "Blockchain Architecture"],
-};
 
 const advisors = [
   {
@@ -130,10 +129,10 @@ export default function Team() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-14">Leadership</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {leadership.map((person) => (
-              <div key={person.name} className="card-hover bg-white rounded-xl border border-slate-200 overflow-hidden animate-on-scroll">
-                <div className="aspect-square relative bg-gradient-to-br from-navy/5 to-teal/5">
+              <div key={person.name} className="card-hover bg-white rounded-xl border border-slate-200 overflow-hidden animate-on-scroll md:flex md:flex-row">
+                <div className="aspect-square md:w-56 md:shrink-0 relative bg-gradient-to-br from-navy/5 to-teal/5">
                   <Image
                     src={person.photo}
                     alt={person.name}
@@ -142,21 +141,21 @@ export default function Team() {
                   />
                 </div>
 
-                <div className="p-7">
+                <div className="p-6 flex flex-col">
                   <h3 className="text-xl font-bold text-navy">{person.name}</h3>
-                  <p className="text-teal font-medium text-sm mb-4">{person.title}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed mb-4">{person.bio}</p>
+                  <p className="text-teal font-medium text-sm mb-3">{person.title}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed mb-3">{person.bio}</p>
 
-                  <div className="border-t border-slate-100 pt-4 mb-4">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Contribution to OWNR</p>
+                  <div className="border-t border-slate-100 pt-3 mb-3">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Contribution to OWNR</p>
                     <p className="text-sm text-slate-500 leading-relaxed">{person.contribution}</p>
                   </div>
 
                   {person.education && (
-                    <p className="text-xs text-slate-400 mb-4">{person.education}</p>
+                    <p className="text-xs text-slate-400 mb-3">{person.education}</p>
                   )}
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-auto">
                     {person.tags.map((tag) => (
                       <span key={tag} className="px-3 py-1 rounded-full bg-teal/[0.06] border border-teal/15 text-xs font-medium text-teal">
                         {tag}
@@ -166,45 +165,6 @@ export default function Team() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: Engineering */}
-      <section className="relative section-padding bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "50px 50px" }} />
-
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-14 text-center">Engineering</h2>
-
-          <div className="card-hover bg-white/[0.04] border border-white/10 rounded-xl overflow-hidden animate-on-scroll md:flex md:flex-row">
-            <div className="aspect-square md:w-72 md:shrink-0 relative bg-gradient-to-br from-teal/10 to-navy/50">
-              <Image
-                src={engineering.photo}
-                alt={engineering.name}
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-
-            <div className="p-8">
-              <h3 className="text-xl font-bold text-white">{engineering.name}</h3>
-              <p className="text-teal-light font-medium text-sm mb-5">{engineering.title}</p>
-              <p className="text-white/60 leading-relaxed mb-5">{engineering.bio}</p>
-
-              <div className="border-t border-white/10 pt-5 mb-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/30 mb-2">Contribution to OWNR</p>
-                <p className="text-white/60 leading-relaxed">{engineering.contribution}</p>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {engineering.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-teal/10 border border-teal/20 text-xs font-medium text-teal-light">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
