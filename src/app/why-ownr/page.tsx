@@ -11,9 +11,6 @@ export default function WhyOwnr() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Copy */}
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-teal mb-6">
-              Why OWNR
-            </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-navy mb-8 leading-[1.1]">
               Why OWNR
             </h1>
@@ -31,11 +28,8 @@ export default function WhyOwnr() {
                 OWNR was created with a simple belief: financial markets should be more transparent, more efficient, and more accessible than they are today.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
-              <Link href="#" className="px-7 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-base">
-                Why OWNR
-              </Link>
-              <Link href="#" className="px-7 py-3.5 border border-navy/20 hover:border-navy text-navy font-semibold rounded-lg transition-colors text-base">
+            <div className="mt-10">
+              <Link href="#" className="px-7 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-base inline-block">
                 Contact Us
               </Link>
             </div>
