@@ -1,10 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function WhyOwnr() {
   return (
     <>
-      {/* SECTION 1: Hero — two-column, left-aligned */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-navy text-white grid-overlay">
+      {/* SECTION 1: Hero — image16.jpg as atmospheric background photo */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-navy text-white">
+        {/* Background photo */}
+        <Image
+          src="/deck-assets/image16.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-30"
+          priority
+        />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/50 z-[1]" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-[1.1]">
@@ -31,41 +44,29 @@ export default function WhyOwnr() {
             </div>
           </div>
 
-          {/* Right: Capital flow diagram */}
-          <div className="hidden lg:flex flex-col items-center gap-0">
+          {/* Right: Key metrics floating over the photo */}
+          <div className="hidden lg:flex flex-col gap-5">
             {[
-              { label: "Investors", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
-              { label: "Capital Markets", icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" },
-              { label: "Mortgage Finance", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-              { label: "Homeowners", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-            ].map((step, i, arr) => (
-              <div key={step.label} className="w-full max-w-xs animate-on-scroll">
-                <div className="flex items-center gap-4 p-5 rounded-xl border border-white/10 bg-white/5">
-                  <div className="w-10 h-10 rounded-lg bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-semibold text-white">{step.label}</span>
+              { stat: "$15T", label: "MBS Market Size", desc: "The second largest fixed-income asset class" },
+              { stat: "$311B", label: "Traded Daily", desc: "One of the most liquid markets on Earth" },
+              { stat: "0%", label: "Retail Access", desc: "Until now, closed to everyday investors" },
+            ].map((item) => (
+              <div key={item.label} className="p-6 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
+                <div className="flex items-baseline gap-4 mb-1">
+                  <span className="text-3xl font-bold text-teal-light">{item.stat}</span>
+                  <span className="text-sm font-semibold text-white/80 uppercase tracking-wider">{item.label}</span>
                 </div>
-                {i < arr.length - 1 && (
-                  <div className="flex flex-col items-center py-2">
-                    <div className="w-px h-5 bg-gradient-to-b from-white/10 to-teal/30" />
-                    <svg className="w-3 h-3 text-teal/60" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                )}
+                <p className="text-sm text-white/40">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: Housing Finance — two-column (copy left, diagram right) */}
+      {/* SECTION 2: Housing Finance — product screenshot on right */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight">
                 Housing finance connects global capital to everyday life
@@ -92,40 +93,50 @@ export default function WhyOwnr() {
               </div>
             </div>
 
-            {/* Right: Capital flow diagram — vertical */}
-            <div className="flex flex-col items-center gap-0 lg:pt-8">
-              {[
-                { label: "Institutional Investors", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
-                { label: "MBS Market", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-                { label: "Lenders", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-                { label: "Homeowners", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-              ].map((step, i, arr) => (
-                <div key={step.label} className="w-full max-w-xs animate-on-scroll">
-                  <div className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 bg-slate-50">
-                    <div className="w-10 h-10 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center text-teal shrink-0">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={step.icon} />
-                      </svg>
+            {/* Right: Product screenshot in device frame */}
+            <div className="flex justify-center lg:pt-4">
+              <div className="relative animate-on-scroll">
+                {/* Glow behind device */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-teal/10 via-transparent to-teal/5 rounded-3xl blur-2xl" />
+                {/* Device frame */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl shadow-navy/10 bg-[#0f1629]">
+                  {/* Browser bar */}
+                  <div className="flex items-center gap-2 px-4 py-3 bg-[#1a1f36] border-b border-white/5">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
                     </div>
-                    <span className="text-sm font-semibold text-navy">{step.label}</span>
+                    <div className="flex-1 mx-4">
+                      <div className="bg-white/5 rounded-md px-3 py-1 text-[10px] text-white/30 font-mono">app.ownr.com</div>
+                    </div>
                   </div>
-                  {i < arr.length - 1 && (
-                    <div className="flex flex-col items-center py-2">
-                      <div className="w-px h-5 bg-gradient-to-b from-slate-200 to-teal/30" />
-                      <svg className="w-3 h-3 text-teal/50" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                  )}
+                  <Image
+                    src="/deck-assets/image40.png"
+                    alt="OWNR trading interface showing USDC to SUMBS1 swap with FINRA pricing"
+                    width={480}
+                    height={480}
+                    className="w-full max-w-[480px]"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: Liquidity — two-column (copy left, viz right) */}
-      <section className="section-padding bg-navy text-white grid-overlay">
+      {/* SECTION 3: Liquidity — photo background with stat overlays */}
+      <section className="relative section-padding bg-navy text-white overflow-hidden">
+        {/* Background photo */}
+        <Image
+          src="/deck-assets/image42.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/70 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent z-[1]" />
+
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -163,17 +174,18 @@ export default function WhyOwnr() {
               </div>
             </div>
 
-            {/* Right: Liquidity visualization */}
-            <div className="flex flex-col items-center gap-3">
+            {/* Right: Stat cards overlaying the photo atmosphere */}
+            <div className="grid grid-cols-2 gap-4">
               {[
-                { width: "w-[30%]", label: "Limited liquidity", opacity: "opacity-30" },
-                { width: "w-[50%]", label: "Growing depth", opacity: "opacity-50" },
-                { width: "w-[70%]", label: "Efficient markets", opacity: "opacity-70" },
-                { width: "w-[90%]", label: "Deep, transparent liquidity", opacity: "opacity-100" },
-              ].map((bar) => (
-                <div key={bar.label} className="w-full flex items-center gap-4 animate-on-scroll">
-                  <div className={`h-12 ${bar.width} rounded-lg bg-gradient-to-r from-teal/20 to-teal ${bar.opacity} transition-all duration-1000`} />
-                  <span className="text-xs font-medium text-white/40 whitespace-nowrap">{bar.label}</span>
+                { stat: "$311B", label: "Daily Volume", sub: "Among the most liquid markets globally" },
+                { stat: "~12s", label: "Settlement", sub: "Atomic DvP on programmable rails" },
+                { stat: "24/7", label: "Market Hours", sub: "Trade anytime, across borders" },
+                { stat: "T+0", label: "Target", sub: "Instant finality replaces T+1-3" },
+              ].map((item) => (
+                <div key={item.label} className="p-5 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-sm animate-on-scroll">
+                  <div className="text-2xl md:text-3xl font-bold text-teal-light mb-1">{item.stat}</div>
+                  <div className="text-xs font-bold text-white/70 uppercase tracking-wider mb-2">{item.label}</div>
+                  <p className="text-xs text-white/35 leading-relaxed">{item.sub}</p>
                 </div>
               ))}
             </div>
@@ -262,8 +274,18 @@ export default function WhyOwnr() {
         </div>
       </section>
 
-      {/* SECTION 5: Expanding Access — two-column (copy left, visual right) */}
-      <section className="section-padding bg-navy text-white grid-overlay">
+      {/* SECTION 5: Expanding Access — photo background with stat blocks */}
+      <section className="relative section-padding bg-navy text-white overflow-hidden">
+        {/* Background photo */}
+        <Image
+          src="/deck-assets/image49.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-15"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/60 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-transparent to-navy z-[1]" />
+
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -289,35 +311,53 @@ export default function WhyOwnr() {
               </div>
             </div>
 
-            {/* Right: Access expansion visual — stacked cards */}
-            <div className="space-y-6">
-              <div className="p-8 rounded-xl border border-white/10 bg-white/5 animate-on-scroll">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/40 mb-5">Today</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                    <span className="text-[10px] font-semibold text-white/50 text-center leading-tight">Institutional<br />only</span>
+            {/* Right: Access evolution timeline */}
+            <div className="space-y-5">
+              {[
+                {
+                  era: "1970s",
+                  label: "Banks Only",
+                  desc: "MBS created — accessible exclusively to commercial and investment banks.",
+                  active: false,
+                },
+                {
+                  era: "2000s",
+                  label: "Institutions",
+                  desc: "Asset managers, pension funds, and insurance companies gain access through specialized channels.",
+                  active: false,
+                },
+                {
+                  era: "Now",
+                  label: "Global Access",
+                  desc: "Tokenized infrastructure opens MBS markets to advisors and individual investors from $10.",
+                  active: true,
+                },
+              ].map((step) => (
+                <div
+                  key={step.era}
+                  className={`p-6 rounded-xl border animate-on-scroll ${
+                    step.active
+                      ? "border-teal/30 bg-teal/10 backdrop-blur-sm"
+                      : "border-white/10 bg-white/[0.03] backdrop-blur-sm"
+                  }`}
+                >
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+                      step.active
+                        ? "bg-teal/20 text-teal-light"
+                        : "bg-white/5 text-white/40"
+                    }`}>
+                      {step.era}
+                    </span>
+                    <span className={`text-lg font-bold ${step.active ? "text-white" : "text-white/60"}`}>
+                      {step.label}
+                    </span>
                   </div>
-                  <div className="flex-1 h-px bg-white/10" />
-                  <span className="text-sm text-white/30">Limited participation</span>
+                  <p className={`text-sm leading-relaxed ${step.active ? "text-white/70" : "text-white/35"}`}>
+                    {step.desc}
+                  </p>
                 </div>
-              </div>
-
-              <div className="p-8 rounded-xl border border-teal/25 bg-teal/10 animate-on-scroll">
-                <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-5">Future</p>
-                <div className="flex items-center gap-3">
-                  {[
-                    "Institutional",
-                    "Advisors",
-                    "Individual investors",
-                  ].map((label, i) => (
-                    <div key={label} className={`rounded-full border flex items-center justify-center ${i === 0 ? "w-16 h-16 bg-teal/15 border-teal/25" : i === 1 ? "w-14 h-14 bg-teal/15 border-teal/20" : "w-12 h-12 bg-teal/15 border-teal/15"}`}>
-                      <span className="text-[9px] font-semibold text-teal-light text-center leading-tight px-1">{label}</span>
-                    </div>
-                  ))}
-                  <div className="flex-1 h-px bg-teal/20" />
-                  <span className="text-sm text-teal-light/70">Broader access</span>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
