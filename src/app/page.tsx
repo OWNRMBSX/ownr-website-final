@@ -349,7 +349,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/contact" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
+            <Link href="/retail" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
               <div className="relative h-48 bg-gradient-to-br from-teal to-teal-dark overflow-hidden">
                 <Image src="/deck-assets/image42.jpg" alt="" fill className="object-cover opacity-20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-dark to-transparent" />
