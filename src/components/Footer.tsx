@@ -18,13 +18,6 @@ export default function Footer() {
               height={36}
               className="h-8 w-auto mb-4"
             />
-            <p className="text-white/50 text-sm max-w-sm leading-relaxed">
-              The application layer for tokenized markets — starting with the
-              $15 trillion mortgage-backed securities market.
-            </p>
-            <p className="text-teal-light/60 text-sm mt-2 font-medium">
-              Where Ownership Meets Opportunity.
-            </p>
           </div>
 
           {/* Platform */}
