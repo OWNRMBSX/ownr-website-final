@@ -239,12 +239,9 @@ export default function Institutions() {
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-teal-light mb-4">For Banks & Mortgage Institutions</p>
               <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
-                Bring mortgage assets onto programmable infrastructure
+                Bring mortgage assets onto blockchain infrastructure
               </h2>
               <div className="space-y-5 text-white/60 text-lg leading-relaxed">
-                <p>
-                  OWNR enables banks to bring mortgage assets onto programmable infrastructure through tokenized pools that mirror the underlying exposure.
-                </p>
                 <ul className="space-y-3">
                   {[
                     "Mortgage exposure becomes more portable across markets and counterparties",
@@ -330,9 +327,6 @@ export default function Institutions() {
                 Extend existing products into tokenized markets
               </h2>
               <div className="space-y-5 text-slate-500 text-lg leading-relaxed">
-                <p>
-                  OWNR enables mortgage REITs and ETF sponsors to extend existing products into tokenized markets without altering the underlying fund or investment strategy.
-                </p>
                 <ul className="space-y-3">
                   {[
                     "Mortgage ETFs can trade in continuous markets with expanded global accessibility",
@@ -370,10 +364,7 @@ export default function Institutions() {
               </h2>
               <div className="space-y-5 text-white/60 text-lg leading-relaxed">
                 <p>
-                  Onchain mortgage markets require professional liquidity providers to support active trading environments.
-                </p>
-                <p>
-                  OWNR enables market makers and trading firms to provide liquidity across tokenized ETFs, tokenized funds, and tokenized mortgage exposure. Continuous markets create new environments for spread capture, inventory management, and market making around mortgage-linked assets.
+                  Continuous markets create new environments for spread capture, inventory management, and market making around mortgage-linked assets.
                 </p>
                 <p className="text-white font-medium border-l-2 border-teal pl-4">
                   Professional liquidity is critical to building deep and efficient markets around tokenized financial assets.
