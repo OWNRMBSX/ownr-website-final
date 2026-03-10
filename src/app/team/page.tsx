@@ -165,14 +165,14 @@ export default function Team() {
       {/* SECTION 5: Advisors */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mb-14">
+          <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Advisors</h2>
             <p className="text-slate-500 text-lg leading-relaxed">
               Advisors provide expertise across mortgage markets, financial data infrastructure, and securities regulation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {advisors.map((advisor) => (
               <div key={advisor.name} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll flex flex-col">
                 <div className="aspect-square relative bg-gradient-to-br from-navy/5 to-teal/5">
