@@ -146,7 +146,7 @@ export default function Team() {
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-lg font-bold text-navy leading-tight">{person.name}</h3>
                   <p className="text-teal font-medium text-sm mt-1 mb-4">{person.title}</p>
-                  <p className="text-[13px] text-slate-500 leading-relaxed mb-4 flex-1">{person.contribution}</p>
+                  <p className="text-[13px] text-slate-500 leading-relaxed mb-4 flex-1">{person.bio}</p>
 
                   <div className="flex flex-wrap gap-1.5 mt-auto">
                     {person.tags.map((tag) => (
