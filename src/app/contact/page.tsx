@@ -5,6 +5,8 @@ import Image from "next/image";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [inquiryType, setInquiryType] = useState("");
 
   return (
@@ -36,9 +38,31 @@ export default function Contact() {
 
           {!submitted ? (
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                setSubmitted(true);
+                setSubmitting(true);
+                setError("");
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: formData.get("name"),
+                      email: formData.get("email"),
+                      org: formData.get("org"),
+                      inquiryType,
+                      message: formData.get("message"),
+                    }),
+                  });
+                  if (!res.ok) throw new Error("Submission failed");
+                  setSubmitted(true);
+                } catch {
+                  setError("Something went wrong. Please try again.");
+                } finally {
+                  setSubmitting(false);
+                }
               }}
               className="space-y-5"
             >
@@ -49,6 +73,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="Your full name"
@@ -62,6 +87,7 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="you@company.com"
@@ -75,6 +101,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="org"
+                  name="org"
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors"
                   placeholder="Company or fund name"
                 />
@@ -110,6 +137,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white text-navy placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:border-teal transition-colors resize-none"
@@ -117,11 +145,16 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <p className="text-red text-sm">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-all cta-glow text-base"
+                disabled={submitting}
+                className="w-full py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-all cta-glow text-base disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {submitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           ) : (

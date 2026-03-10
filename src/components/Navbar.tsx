@@ -2,18 +2,36 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/why-ownr", label: "Why OWNR" },
-  { href: "/contact", label: "Contact" },
+];
+
+const solutionsLinks = [
+  { href: "/institutions", label: "For Institutions" },
+  { href: "/retail", label: "For Retail Investors" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setSolutionsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isSolutionsActive = solutionsLinks.some((l) => pathname === l.href);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
@@ -44,8 +62,60 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          {/* Solutions dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setSolutionsOpen(!solutionsOpen)}
+              className={`text-sm font-medium transition-colors flex items-center gap-1 ${
+                isSolutionsActive ? "text-teal" : "text-navy/70 hover:text-navy"
+              }`}
+            >
+              Solutions
+              <svg className={`w-3.5 h-3.5 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {solutionsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2">
+                {solutionsLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      pathname === link.href
+                        ? "text-teal bg-teal/5"
+                        : "text-navy/70 hover:text-navy hover:bg-slate-50"
+                    }`}
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <Link
-            href="#"
+            href="/team"
+            className={`text-sm font-medium transition-colors ${
+              pathname === "/team" ? "text-teal" : "text-navy/70 hover:text-navy"
+            }`}
+          >
+            Team
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`text-sm font-medium transition-colors ${
+              pathname === "/contact" ? "text-teal" : "text-navy/70 hover:text-navy"
+            }`}
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/contact"
             className="ml-2 px-5 py-2 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Join Waitlist
@@ -83,8 +153,45 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <div className="pl-0">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 mt-2">Solutions</p>
+            {solutionsLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`block text-sm font-medium py-1 pl-3 ${
+                  pathname === link.href ? "text-teal" : "text-navy/70"
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
           <Link
-            href="#"
+            href="/team"
+            className={`block text-sm font-medium py-1 ${
+              pathname === "/team" ? "text-teal" : "text-navy/70"
+            }`}
+            onClick={() => setMobileOpen(false)}
+          >
+            Team
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`block text-sm font-medium py-1 ${
+              pathname === "/contact" ? "text-teal" : "text-navy/70"
+            }`}
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/contact"
             className="block w-full text-center px-5 py-2.5 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >

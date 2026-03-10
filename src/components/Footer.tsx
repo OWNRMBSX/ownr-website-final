@@ -33,6 +33,15 @@ export default function Footer() {
                 <Link href="/why-ownr" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Why OWNR
                 </Link>
+                <Link href="/institutions" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  For Institutions
+                </Link>
+                <Link href="/retail" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  For Retail Investors
+                </Link>
+                <Link href="/team" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Team
+                </Link>
                 <Link href="/contact" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Contact
                 </Link>

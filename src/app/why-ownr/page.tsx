@@ -448,10 +448,10 @@ export default function WhyOwnr() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Link href="#" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
+            <Link href="/contact" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
               Partner with OWNR
             </Link>
-            <Link href="#" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors text-lg">
+            <Link href="/contact" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors text-lg">
               Join the Waitlist
             </Link>
           </div>
