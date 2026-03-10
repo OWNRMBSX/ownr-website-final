@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
@@ -20,26 +19,8 @@ export default function Footer() {
             />
           </div>
 
-          {/* Platform */}
-          <div>
-            <h4 className="text-sm font-semibold text-teal-light mb-4 uppercase tracking-wider">
-              Platform
-            </h4>
-            <div className="space-y-2.5">
-              <Link href="/institutions" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Institutions
-              </Link>
-              <Link href="/retail" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Retail Investors
-              </Link>
-              <Link href="/data-room" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Data Room
-              </Link>
-              <Link href="/waitlist" className="block text-sm text-white/50 hover:text-white transition-colors duration-300">
-                Join Waitlist
-              </Link>
-            </div>
-          </div>
+          {/* Spacer */}
+          <div />
 
           {/* Connect */}
           <div>

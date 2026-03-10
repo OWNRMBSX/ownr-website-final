@@ -7,10 +7,6 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/institutions", label: "Institutions" },
-  { href: "/retail", label: "Retail Investors" },
-  { href: "/data-room", label: "Data Room" },
 ];
 
 export default function Navbar() {
@@ -47,7 +43,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/waitlist"
+            href="#"
             className="ml-2 px-5 py-2 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
           >
             Join Waitlist
@@ -86,7 +82,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/waitlist"
+            href="#"
             className="block w-full text-center px-5 py-2.5 bg-teal hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors"
             onClick={() => setMobileOpen(false)}
           >

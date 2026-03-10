@@ -318,7 +318,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link href="/institutions" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
+            <Link href="#" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
               <div className="relative h-48 bg-navy overflow-hidden">
                 <Image src="/deck-assets/image16.jpg" alt="" fill className="object-cover opacity-30" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy to-transparent" />
@@ -349,7 +349,7 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/retail" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
+            <Link href="#" className="group card-hover gradient-border block rounded-2xl overflow-hidden border border-slate-200">
               <div className="relative h-48 bg-gradient-to-br from-teal to-teal-dark overflow-hidden">
                 <Image src="/deck-assets/image42.jpg" alt="" fill className="object-cover opacity-20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-dark to-transparent" />
@@ -448,10 +448,10 @@ export default function Home() {
             or an investor ready to access government-backed yield — OWNR has a place for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
+            <Link href="#" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
               Join the Investor Waitlist
             </Link>
-            <Link href="/institutions" className="px-8 py-3.5 border border-navy/30 hover:border-navy text-navy font-semibold rounded-lg transition-colors text-lg">
+            <Link href="#" className="px-8 py-3.5 border border-navy/30 hover:border-navy text-navy font-semibold rounded-lg transition-colors text-lg">
               Partner with OWNR
             </Link>
           </div>
