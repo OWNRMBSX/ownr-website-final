@@ -434,18 +434,16 @@ export default function Home() {
       </section>
 
       {/* SECTION 6: CTA — Get Started */}
-      <section className="relative overflow-hidden bg-gradient-hero text-white section-padding">
-        {/* Subtle glow effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,_rgba(52,125,135,0.2)_0%,_transparent_60%)]" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <span className="badge-pill-dark mb-6">Get Started</span>
-          <h2 className="text-3xl md:text-5xl font-bold mb-2">
+      <section className="section-padding bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="badge-pill mb-6">Get Started</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-2">
             The Future of MBS
           </h2>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="text-gradient-teal">Starts Here</span>
           </h2>
-          <p className="text-white/70 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
             Whether you&apos;re an institution looking to modernize MBS infrastructure
             or an investor ready to access government-backed yield — OWNR has a place for you.
           </p>
@@ -453,7 +451,7 @@ export default function Home() {
             <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
               Join the Investor Waitlist
             </Link>
-            <Link href="/institutions" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors text-lg">
+            <Link href="/institutions" className="px-8 py-3.5 border border-navy/30 hover:border-navy text-navy font-semibold rounded-lg transition-colors text-lg">
               Partner with OWNR
             </Link>
           </div>
