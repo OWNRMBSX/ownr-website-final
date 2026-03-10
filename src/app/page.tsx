@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import TeamSection from "@/components/TeamSection";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,151 +7,7 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Section 2: Belief Statement — Why Now / Regulatory Momentum (kept as-is) */}
-      <section className="section-padding bg-navy text-white grid-overlay">
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-teal-light text-sm font-semibold uppercase tracking-wider mb-3">
-              Why Now
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              The Regulatory Window is Open
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              2025 saw a seismic shift in crypto regulation. For the first time,
-              the infrastructure and the legal framework exist to bring real-world assets onchain at scale.
-            </p>
-          </div>
-
-          {/* Timeline-style regulatory milestones */}
-          <div className="relative mb-12">
-            {/* Connecting line */}
-            <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-teal/0 via-teal/40 to-teal/0" />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                {
-                  title: "GENIUS Act",
-                  desc: "First federal crypto legislation signed into law. Stablecoin framework established.",
-                  tag: "July 2025",
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "CLARITY Act",
-                  desc: "Passed House 294-134. Digital commodities framework ends SEC-CFTC jurisdictional conflict.",
-                  tag: "2025",
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "BlackRock BUIDL",
-                  desc: "$2.5B+ tokenized treasury fund. 800%+ growth in 18 months proves institutional demand is real.",
-                  tag: "Live Now",
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  ),
-                },
-                {
-                  title: "$18.9T by 2033",
-                  desc: "BCG/Ripple forecast for tokenized assets. 100%+ CAGR, the fastest-growing financial segment.",
-                  tag: "Projected",
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                  ),
-                },
-              ].map((item) => (
-                <div key={item.title} className="glass-card p-6 rounded-xl animate-on-scroll text-center">
-                  <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-teal/20 border border-teal/30 flex items-center justify-center text-teal-light">
-                    {item.icon}
-                  </div>
-                  <span className="inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-teal-light bg-teal/10 rounded mb-3">
-                    {item.tag}
-                  </span>
-                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Additional market proof */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[
-              { value: "$4B+", label: "Securitize AUM", sub: "Tokenized assets" },
-              { value: "$4T+", label: "Canton Network", sub: "Annual tokenized volume" },
-              { value: "DTC", label: "No-Action Letter", sub: "Dec 2025, tokenization services" },
-              { value: "MBS", label: "Next Frontier", sub: "$15T untokenized market" },
-            ].map((s) => (
-              <div key={s.label} className="p-4 rounded-xl bg-white/5 border border-white/10 text-center animate-on-scroll">
-                <div className="text-xl md:text-2xl font-bold text-teal-light mb-1">{s.value}</div>
-                <div className="text-xs font-semibold text-white/60 mb-0.5">{s.label}</div>
-                <div className="text-[10px] text-white/30">{s.sub}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="p-6 rounded-xl bg-teal/10 border border-teal/20 text-center">
-            <p className="text-teal-light font-semibold text-lg">
-              MBS is the ideal next asset class: $15T+ market, operational complexity
-              perfect for smart contracts, proven institutional infrastructure now operational.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: Infrastructure Evolution */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">
-              Infrastructure Evolution
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
-              Markets evolve when <span className="text-gradient-teal">infrastructure</span> evolves.
-            </h2>
-            <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
-              Every generation of markets has been defined by the infrastructure beneath it.
-              Floor exchanges gave way to electronic trading. APIs unlocked algorithmic strategies.
-              Cloud infrastructure enabled global scale. Now, programmable blockchains are enabling the
-              next transformation: markets that settle instantly, operate 24/7, and run on transparent, auditable code.
-            </p>
-          </div>
-
-          {/* Horizontal timeline */}
-          <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 max-w-5xl mx-auto">
-            {[
-              { label: "Floor Exchanges", era: "1792" },
-              { label: "Electronic Trading", era: "1971" },
-              { label: "APIs", era: "2000s" },
-              { label: "Cloud Infrastructure", era: "2010s" },
-              { label: "Programmable Markets", era: "Now", active: true },
-            ].map((node, i, arr) => (
-              <div key={node.label} className={`timeline-node animate-on-scroll${node.active ? " active" : ""}`}>
-                {i < arr.length - 1 && (
-                  <div className={`timeline-connector hidden md:block${node.active ? " flow-line-h" : ""}`} />
-                )}
-                <div className="node-dot mb-3" />
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">{node.era}</span>
-                <span className={`text-sm font-semibold ${node.active ? "text-teal" : "text-navy"}`}>
-                  {node.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Scale of the Opportunity (Redesigned) */}
+      {/* SECTION 2: The Opportunity */}
       <section className="section-padding bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -162,9 +17,10 @@ export default function Home() {
               <span className="text-gradient-teal">in the World</span>
             </h2>
             <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
-              MBS are a <span className="text-navy font-semibold">$15 trillion market</span>, the
+              Mortgage-backed securities are a <span className="text-navy font-semibold">$15 trillion market</span> — the
               second largest fixed-income asset class after U.S. Treasuries. Yet it still runs on legacy
-              infrastructure: T+1-3 settlement, manual reconciliation, and zero retail access. Until now.
+              infrastructure: T+1-3 settlement, manual reconciliation, and zero retail access.{" "}
+              <span className="text-navy font-semibold">Until now.</span>
             </p>
           </div>
 
@@ -173,22 +29,24 @@ export default function Home() {
               {
                 stat: "$311B",
                 label: "TRADED EVERY SINGLE DAY",
-                desc: "MBS is one of the most liquid markets on Earth, yet its infrastructure has not been modernized in decades.",
+                desc: "MBS is one of the most liquid markets on Earth — yet its infrastructure hasn't been modernized in decades.",
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 ),
+                gradient: "from-blue-50 to-white",
               },
               {
                 stat: "0%",
                 label: "RETAIL ACCESS TODAY",
-                desc: "Everyday investors have never been able to invest directly in MBS. OWNR changes that with fractional tokens from $10.",
+                desc: "Everyday investors have never been able to directly invest in MBS pools. OWNR changes that with fractional tokens from $10.",
                 icon: (
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                   </svg>
                 ),
+                gradient: "from-red-50 to-white",
               },
               {
                 stat: "T+3",
@@ -199,13 +57,14 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
+                gradient: "from-teal-50 to-white",
               },
             ].map((item) => (
-              <div key={item.stat} className="card-hover gradient-border text-center p-8 rounded-xl border border-slate-200 bg-white animate-on-scroll">
+              <div key={item.stat} className={`card-hover gradient-border text-center p-8 rounded-xl border border-slate-200 bg-gradient-to-b ${item.gradient} animate-on-scroll`}>
                 <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
                   {item.icon}
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-teal mb-2">{item.stat}</div>
+                <div className="text-4xl md:text-5xl font-bold text-navy mb-2">{item.stat}</div>
                 <div className="text-xs font-bold text-navy tracking-wider mb-3">{item.label}</div>
                 <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -214,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6: Programmable Assets */}
+      {/* SECTION 3: Financial assets are becoming programmable */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -263,12 +122,12 @@ export default function Home() {
                   color: "bg-teal/10 border-teal/20 text-navy",
                 },
                 {
-                  label: "Programmable Financial Flows",
-                  sub: "Automated compliance, yield streaming, composable DeFi",
+                  label: "Programmable Capital",
+                  sub: "Automated compliance, composable liquidity, dynamic yield flows",
                   color: "bg-teal border-teal text-white",
                 },
               ].map((step, i, arr) => (
-                <div key={step.label} className="w-full max-w-sm">
+                <div key={step.label} className="w-full max-w-sm animate-on-scroll">
                   <div className={`p-6 rounded-xl border ${step.color} text-center`}>
                     <div className="font-bold text-lg mb-1">{step.label}</div>
                     <div className={`text-sm ${i === arr.length - 1 ? "text-white/70" : "text-slate-500"}`}>
@@ -299,7 +158,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 7: Built for the Next Era */}
+      {/* SECTION 4: Infrastructure Evolution */}
+      <section className="section-padding bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">
+              Infrastructure Evolution
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">
+              Markets evolve when <span className="text-gradient-teal">infrastructure</span> evolves.
+            </h2>
+            <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
+              Every generation of markets has been defined by the infrastructure beneath it.
+              Floor exchanges gave way to electronic trading. APIs unlocked algorithmic strategies.
+              Cloud infrastructure enabled global scale. Now, programmable blockchains are enabling the
+              next transformation: markets that settle instantly, operate 24/7, and run on transparent, auditable code.
+            </p>
+          </div>
+
+          {/* Horizontal timeline */}
+          <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 max-w-5xl mx-auto">
+            {[
+              { label: "Floor Exchanges", era: "1792" },
+              { label: "Electronic Trading", era: "1971" },
+              { label: "APIs", era: "2000s" },
+              { label: "Cloud Infrastructure", era: "2010s" },
+              { label: "Programmable Markets", era: "Now", active: true },
+            ].map((node, i, arr) => (
+              <div key={node.label} className={`timeline-node animate-on-scroll${node.active ? " active" : ""}`}>
+                {i < arr.length - 1 && (
+                  <div className={`timeline-connector hidden md:block${node.active ? " flow-line-h" : ""}`} />
+                )}
+                <div className="node-dot mb-3" />
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">{node.era}</span>
+                <span className={`text-sm font-semibold ${node.active ? "text-teal" : "text-navy"}`}>
+                  {node.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 continued: Why OWNR — Built for the Next Era */}
       <section className="section-padding bg-navy text-white grid-overlay">
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -382,7 +283,6 @@ export default function Home() {
               },
             ].map((card) => (
               <div key={card.title} className="feature-card animate-on-scroll">
-                {/* Top row: icon + stat badge */}
                 <div className="flex items-start justify-between mb-5">
                   <div className="w-11 h-11 rounded-xl bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light">
                     {card.icon}
@@ -400,7 +300,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 8: Two Markets. One Platform. */}
+      {/* SECTION 5: Two Markets. One Platform. */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
@@ -483,25 +383,78 @@ export default function Home() {
         </div>
       </section>
 
-      <TeamSection />
+      {/* SECTION 5 continued: Three Assets Currently Supported */}
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold mb-2">
+              Three ways mortgage assets
+            </h2>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              <span className="text-gradient-teal">move onchain.</span>
+            </h2>
+          </div>
 
-      {/* CTA banner */}
-      <section className="bg-gradient-navy text-white section-padding">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The Future of MBS Starts Here
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                num: "01",
+                tag: "Institutions Only",
+                title: "Tokenized Pools",
+                desc: "Compliant onchain representations of existing MBS pools. The underlying securities remain unchanged while the tokenized version enables programmable ownership, transfer, and settlement.",
+              },
+              {
+                num: "02",
+                tag: null,
+                title: "Tokenized ETFs",
+                desc: "Existing MBS-related ETFs issued as tokenized versions that mirror the underlying fund exposure. Investors gain access to familiar mortgage products with onchain liquidity, fractional ownership, and direct yield distribution.",
+              },
+              {
+                num: "03",
+                tag: null,
+                title: "Tokenized Funds",
+                desc: "Tokenized mortgage funds designed for onchain investors. These funds package mortgage exposure into simple investment vehicles that are accessible with lower minimums and operate natively on blockchain infrastructure.",
+              },
+            ].map((asset) => (
+              <div key={asset.num} className="feature-card animate-on-scroll">
+                <div className="mb-4">
+                  <span className="text-3xl font-bold text-teal-light/30">{asset.num}</span>
+                  {asset.tag && (
+                    <span className="ml-3 text-[10px] font-bold uppercase tracking-wider text-teal-light bg-teal/15 px-2 py-0.5 rounded">
+                      {asset.tag}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{asset.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{asset.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: CTA — Get Started */}
+      <section className="relative overflow-hidden bg-gradient-hero text-white section-padding">
+        {/* Subtle glow effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,_rgba(52,125,135,0.2)_0%,_transparent_60%)]" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <span className="badge-pill-dark mb-6">Get Started</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-2">
+            The Future of MBS
           </h2>
-          <p className="text-white/70 mb-8 leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <span className="text-gradient-teal">Starts Here</span>
+          </h2>
+          <p className="text-white/70 mb-10 leading-relaxed text-lg max-w-2xl mx-auto">
             Whether you&apos;re an institution looking to modernize MBS infrastructure
-            or an investor ready to access government-backed yield,
-            OWNR has a place for you.
+            or an investor ready to access government-backed yield — OWNR has a place for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow">
-              Join the Waitlist
+            <Link href="/waitlist" className="px-8 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-lg">
+              Join the Investor Waitlist
             </Link>
-            <Link href="/data-room" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors">
-              Access Data Room
+            <Link href="/institutions" className="px-8 py-3.5 border border-white/30 hover:border-white text-white font-semibold rounded-lg transition-colors text-lg">
+              Partner with OWNR
             </Link>
           </div>
         </div>
