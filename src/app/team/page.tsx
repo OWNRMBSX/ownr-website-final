@@ -5,7 +5,7 @@ const leadership = [
   {
     name: "Christina Cartagena",
     title: "Chief Executive Officer",
-    photo: "/deck-assets/headshot-1.jpg",
+    photo: "/deck-assets/headshot-christina.jpg",
     bio: "Christina Cartagena is a technology and product strategist operating at the intersection of traditional finance and decentralized infrastructure. She previously served as Commercial Strategy Lead for Visible Alpha at S\u0026P Global Market Intelligence, where she helped drive commercial strategy for institutional financial data and analytics products used by global investors. Christina has worked across blockchain infrastructure, fintech innovation, and capital markets data platforms.",
     contribution: "Christina leads OWNR\u2019s strategic roadmap, capital markets partnerships, and investor strategy. She designed the platform\u2019s tokenized mortgage infrastructure, including the dual token model for tokenizing TBA mortgage contracts and structuring pooled mortgage backed investment products.",
     education: "B.A. from Florida International University with a focus on computer science and marketing.",
@@ -14,7 +14,7 @@ const leadership = [
   {
     name: "Daniel Pason",
     title: "Chief Innovation Officer",
-    photo: "/deck-assets/headshot-2.jpg",
+    photo: "/deck-assets/headshot-daniel.jpg",
     bio: "Daniel Pason brings deep expertise in capital markets and securitized products. He has worked across the agency mortgage-backed securities market and securitized products sector, including roles focused on agency MBS pricing strategies, securitized products research, and institutional investor engagement. His experience spans the mortgage market ecosystem as well as broader capital markets including leveraged finance and long short investing.",
     contribution: "Daniel provides the institutional capital markets expertise that grounds OWNR\u2019s infrastructure in real world mortgage market mechanics. His experience across agency MBS trading, pricing, and securitized products ensures that OWNR\u2019s tokenized assets faithfully replicate traditional mortgage securities.",
     tags: ["Agency MBS", "Securitized Products", "Mortgage Market Structure"],
@@ -22,7 +22,7 @@ const leadership = [
   {
     name: "Matthew Moll",
     title: "Chief Operating Officer",
-    photo: "/deck-assets/headshot-3.jpg",
+    photo: "/deck-assets/headshot-matthew.jpg",
     bio: "Matthew Moll is a cross functional operations leader with extensive experience scaling complex operational systems and financial services organizations. He previously advised private equity transactions and held senior operational roles across industries including aerospace, defense, and financial services. Matthew also founded a boutique consulting firm that worked with Fortune 500 companies and private equity-backed businesses.",
     contribution: "Matthew oversees operations, financial strategy, and execution across the company. His experience translating complex technical systems into scalable operational infrastructure ensures OWNR\u2019s platform can grow into institutional grade market infrastructure.",
     education: "B.S. in Mechanical Engineering from the University of Connecticut. Lean Six Sigma Black Belt certification from Villanova University.",
@@ -33,6 +33,7 @@ const leadership = [
 const engineering = {
   name: "Sergii Grybniak, PhD",
   title: "Head of Engineering",
+  photo: "/deck-assets/headshot-sergii.jpg",
   bio: "Dr. Sergii Grybniak is a distributed ledger researcher and blockchain infrastructure engineer specializing in consensus protocols and decentralized systems. He serves as Head of Research at Waterfall Network and previously worked as a Web3 Institute researcher contributing to blockchain architecture and distributed consensus systems. Dr. Grybniak is a co-chair of the IEEE working group on distributed ledger technologies and has authored numerous academic publications on blockchain protocols, smart contracts, and decentralized architectures. His previous company Carvoy was acquired by Capital One.",
   contribution: "Sergii architects the tokenization engine and blockchain infrastructure that powers OWNR\u2019s mortgage backed securities platform. His work ensures the platform is built on secure, scalable distributed systems capable of supporting institutional financial markets.",
   tags: ["Distributed Ledger Systems", "Consensus Protocols", "Blockchain Architecture"],
@@ -44,21 +45,21 @@ const advisors = [
     role: "Former Head of European Data at NASDAQ",
     desc: "Advises OWNR on institutional data strategy, analytics infrastructure, and financial data monetization.",
     domain: "Finance & Data",
-    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+    photo: "/deck-assets/headshot-hamza.jpg",
   },
   {
     name: "Ling Xu",
     role: "Former Vice President, Multifamily Investments \u2014 Freddie Mac",
     desc: "Advises OWNR on mortgage market structure and securitization mechanics.",
     domain: "Mortgage Markets",
-    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+    photo: "/deck-assets/headshot-ling.jpg",
   },
   {
     name: "Zackary An",
     role: "Corporate Associate \u2014 Paul Weiss",
     desc: "Advises OWNR on securities law and regulatory architecture for tokenized mortgage assets.",
     domain: "Securities Law",
-    icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
+    photo: "/deck-assets/headshot-zack.jpg",
   },
 ];
 
@@ -177,10 +178,13 @@ export default function Team() {
           <h2 className="text-3xl md:text-4xl font-bold mb-14 text-center">Engineering</h2>
 
           <div className="card-hover bg-white/[0.04] border border-white/10 rounded-xl overflow-hidden animate-on-scroll">
-            <div className="h-44 bg-gradient-to-br from-teal/10 to-navy/50 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
-                <span className="text-xl font-bold text-white/40">SG</span>
-              </div>
+            <div className="h-44 relative bg-gradient-to-br from-teal/10 to-navy/50">
+              <Image
+                src={engineering.photo}
+                alt={engineering.name}
+                fill
+                className="object-cover object-top"
+              />
             </div>
 
             <div className="p-8">
@@ -217,16 +221,21 @@ export default function Team() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {advisors.map((advisor) => (
-              <div key={advisor.name} className="card-hover p-7 rounded-xl border border-slate-200 bg-slate-50 animate-on-scroll">
-                <div className="w-12 h-12 mb-5 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center text-teal">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={advisor.icon} />
-                  </svg>
+              <div key={advisor.name} className="card-hover rounded-xl border border-slate-200 bg-slate-50 overflow-hidden animate-on-scroll">
+                <div className="h-48 relative bg-gradient-to-br from-navy/5 to-teal/5">
+                  <Image
+                    src={advisor.photo}
+                    alt={advisor.name}
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
-                <p className="text-xs font-bold uppercase tracking-wider text-teal mb-3">{advisor.domain}</p>
-                <h3 className="text-lg font-bold text-navy mb-1">{advisor.name}</h3>
-                <p className="text-sm text-slate-400 font-medium mb-4">{advisor.role}</p>
-                <p className="text-sm text-slate-500 leading-relaxed">{advisor.desc}</p>
+                <div className="p-7">
+                  <p className="text-xs font-bold uppercase tracking-wider text-teal mb-3">{advisor.domain}</p>
+                  <h3 className="text-lg font-bold text-navy mb-1">{advisor.name}</h3>
+                  <p className="text-sm text-slate-400 font-medium mb-4">{advisor.role}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">{advisor.desc}</p>
+                </div>
               </div>
             ))}
           </div>
