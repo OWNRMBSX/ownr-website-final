@@ -102,6 +102,83 @@ export default function Institutions() {
         </div>
       </section>
 
+      {/* SECTION: Why Move MBS Onchain */}
+      <section className="section-padding bg-navy text-white grid-overlay">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Every Advantage. <span className="text-gradient-teal">Zero Disruption.</span>
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed">
+              FIX/FpML middleware means OWNR plugs into your existing systems. No rip-and-replace. Just better infrastructure underneath.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                stat: "~12s",
+                statSub: "VS T+3 DAYS",
+                title: "T+0 Atomic Settlement",
+                desc: "Collapse T+1-3 into ~12 seconds. Atomic delivery-versus-payment means settlement and delivery happen simultaneously — no more settlement risk, no more failed trades.",
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
+              },
+              {
+                stat: "60-80%",
+                statSub: "CAPITAL SAVINGS",
+                title: "Capital Efficiency",
+                desc: "Free up billions in trapped capital. Tokenized collateral and instant settlement mean dramatically lower margin requirements, reduced warehouse exposure, and freed balance sheet capacity.",
+                icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+              },
+              {
+                stat: "0",
+                statSub: "COUNTERPARTY RISK",
+                title: "Zero Counterparty Risk",
+                desc: "Smart contract escrow replaces trust-based settlement. Every trade is transparent, immutable, and automatically compliant — KYC/AML and TRACE reporting enforced at the contract level.",
+                icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+              },
+              {
+                stat: "24/7",
+                statSub: "GLOBAL ACCESS",
+                title: "Global Distribution",
+                desc: "Tokenization breaks MBS out of the closed dealer network. Institutional and qualified investors worldwide can access your products, deepening your order book.",
+                icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+              },
+              {
+                stat: "Real-time",
+                statSub: "POOL ANALYTICS",
+                title: "Onchain Transparency",
+                desc: "Real-time loan-level analytics: pool factors, principal balances, CPR, prepayment speeds — all onchain and accessible to every market participant.",
+                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+              },
+              {
+                stat: "90%+",
+                statSub: "OPS COST REDUCTION",
+                title: "Programmable Infrastructure",
+                desc: "Smart contracts automate what humans currently do — coupon payments, compliance checks, reporting, and reconciliation. Reduce ops costs by orders of magnitude.",
+                icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+              },
+            ].map((card) => (
+              <div key={card.title} className="feature-card animate-on-scroll">
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-teal/15 border border-teal/25 flex items-center justify-center text-teal-light">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={card.icon} />
+                    </svg>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-lg font-bold text-teal-light leading-none">{card.stat}</div>
+                    <div className="text-[9px] font-bold tracking-wider text-white/40 mt-0.5">{card.statSub}</div>
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 3: Infrastructure principles */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
