@@ -172,10 +172,10 @@ export default function Team() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl">
             {advisors.map((advisor) => (
               <div key={advisor.name} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden animate-on-scroll flex flex-col">
-                <div className="aspect-[3/4] relative bg-gradient-to-br from-navy/5 to-teal/5">
+                <div className="aspect-square relative bg-gradient-to-br from-navy/5 to-teal/5">
                   <Image
                     src={advisor.photo}
                     alt={advisor.name}
@@ -183,10 +183,10 @@ export default function Team() {
                     className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-5 flex flex-col flex-1">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-teal mb-2">{advisor.domain}</span>
-                  <h3 className="text-lg font-bold text-navy leading-tight">{advisor.name}</h3>
-                  <p className="text-sm text-slate-400 font-medium mt-1 mb-3">{advisor.role}</p>
+                  <h3 className="text-base font-bold text-navy leading-tight">{advisor.name}</h3>
+                  <p className="text-[13px] text-slate-400 font-medium mt-1 mb-3">{advisor.role}</p>
                   <p className="text-[13px] text-slate-500 leading-relaxed mt-auto">{advisor.desc}</p>
                 </div>
               </div>
