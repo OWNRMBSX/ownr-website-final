@@ -329,7 +329,7 @@ export default function WhyOwnr() {
                 {
                   era: "Now",
                   label: "Global Access",
-                  desc: "Tokenized infrastructure opens MBS markets to advisors and individual investors from $10.",
+                  desc: "Tokenized infrastructure opens MBS markets to global retail investors.",
                   active: true,
                 },
               ].map((step) => (
