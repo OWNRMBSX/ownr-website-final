@@ -33,6 +33,9 @@ export default function Footer() {
                 <Link href="/why-ownr" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
                   Why OWNR
                 </Link>
+                <Link href="/contact" className="block text-sm text-slate-400 hover:text-navy transition-colors duration-300">
+                  Contact
+                </Link>
               </div>
             </div>
             <div>

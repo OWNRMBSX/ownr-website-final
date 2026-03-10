@@ -38,7 +38,7 @@ export default function WhyOwnr() {
               </p>
             </div>
             <div className="mt-10">
-              <Link href="#" className="px-7 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-base inline-block">
+              <Link href="/contact" className="px-7 py-3.5 bg-teal hover:bg-teal-dark text-white font-semibold rounded-lg transition-colors cta-glow text-base inline-block">
                 Contact Us
               </Link>
             </div>
