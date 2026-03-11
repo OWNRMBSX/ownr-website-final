@@ -80,7 +80,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_at_80%_70%,_rgba(52,125,135,0.15)_0%,_transparent_50%)]" />
       <div className="absolute bottom-0 left-0 right-0 z-[2] h-32 bg-gradient-to-t from-[#0f2130] to-transparent" />
 
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20 sm:pt-0">
         {/* OWNR + MBSX badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 mb-8 border border-teal/30 rounded-full bg-white/5 backdrop-blur-md">
           <Image src="/deck-assets/image5.png" alt="OWNR" width={80} height={20} className="h-5 w-auto" priority />
